@@ -1,0 +1,51 @@
+/* cardZhuanqu/cardZhuanqu.wxss */
+.content{
+  width: calc(100vw - 54rpx);
+  height: auto;
+  margin: 20rpx auto;
+}
+
+.list_one{
+  width: 100%;
+  height: 424rpx;  
+  margin-top: 28rpx;
+  border-radius: 20rpx;
+  position: relative;
+  overflow: hidden;
+  box-shadow:0px 6px 22px #d7d7d7;
+}
+.list_one:nth-child(1){
+  margin-top: 37rpx;
+}
+.list_one image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.title{
+  font-size: 24rpx;
+  color: #808080;
+  margin-top: 50rpx
+}
+.cardName{
+  font-size: 40rpx;
+  color: #333333;
+  text-align: center;
+  margin-top: 80rpx;
+  font-weight: Regular
+}
+.cardDesc{
+  font-size: 22rpx;
+  color: #333333;
+  margin-top: 42rpx;
+  text-align: center;
+  display: block
+}
+.cardPrice{
+  font-size: 22rpx;
+  color: #333333;
+  margin-top: 16rpx;
+  text-align: center;
+}

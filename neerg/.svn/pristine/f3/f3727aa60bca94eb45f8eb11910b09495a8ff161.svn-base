@@ -1,0 +1,48 @@
+<!--pages/archives/archives.wxml-->
+<view class='archives_box'>
+  <view class='archives_box_top'>
+    <image class='back' src='https://store.ineerg.com/static/img/skinbg.jpg'></image>
+    <view class='archives_box_top_1' >
+      <view>
+        <image src='https://store.ineerg.com/static/img/ar.png'></image>
+      </view>
+      <view>我的肌肤检测记录</view>
+    </view>
+    <view class='archives_box_top_2' >
+      <view>
+        {{datalist.length}}
+      </view>
+      <view>次检测</view>
+    </view>
+  </view>
+  <view class='skin'>
+    <view class='skin_title'>
+    肌肤档案
+    </view>
+    <view wx:for="{{datalist}}" wx:key="" wx:for-item="item" class='skin_box'>
+      <view class='skin_list_top'>
+        <view></view>
+        <view>检查日期</view>
+        <view>{{item.checkdate}}</view>
+      </view>
+      <view class='skin_list_bottom'>
+        <navigator url='/archives/archives_detail/archives_detail?id={{item.id}}' class='skin_list_bottom_box'>
+            <view>
+              {{item.total}}
+            </view>
+            <view>
+              <view>
+                本次肌肤综合检测已评估完成
+              </view>
+              <view>
+                本次结果{{item.total}}分，点击查看详情.
+              </view>
+            </view>
+            <view>
+              >
+            </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

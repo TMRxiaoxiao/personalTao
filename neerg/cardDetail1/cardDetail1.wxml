@@ -1,0 +1,21 @@
+<!--cardDetail1/cardDetail1.wxml-->
+<!--cardDetail/cardDetail.wxml-->
+<import src="/wxParse/wxParse.wxml" />
+<view class='bac'>
+  <view class='hs_bac'></view>
+  <view class='card_box'>
+    <image src='https://store.ineerg.com{{image}}'></image>
+  </view>
+  <view class='tiaoxingma'>
+    <text decode="emsp">{{data.description}}</text>
+    <text>{{price}}元/{{count}}次</text>
+  </view>
+</view>
+<view class='fenge'></view> 
+<view class='rules'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<view style='width:750rpx;height:100rpx'></view>
+<navigator wx:if="{{forsale==1}}" url='/orders/cardPay/cardPay?id={{cardId}}&ctype={{ctype}}' class='buyBtn'>马上购买</navigator>
+
+

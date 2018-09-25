@@ -1,0 +1,26 @@
+<view class="integral_ban">
+  <image src='https://store.ineerg.com/static/mini/images/order/jfbanner.png'></image>
+  <view class='jf_logo'>
+    <image src='https://store.ineerg.com/static/mini/images/order/jifen.png'></image>
+  </view>
+  <view class='jf_sz'>{{nums}}</view>
+  <view class='jf_text'>当前积分</view>
+</view>
+<view class='integral_desc'>
+  护肤在现代已经成为一门学问，人们受皮肤问题困扰不再盲目地去商店买各种化妆品来试，而是由皮肤科医生开出处方，提供针对性的护肤建议。随着人们对健康的追求日益高涨和皮肤医学的高速发展，带有更高安全性和有效性的医学护肤品已经成为不可阻挡的一股潮流。伴随更多...
+  <!-- <text class='more'>显示全部</text> -->
+</view>
+<view style='width:750rpx;height:20rpx;background:#f5f5f5'></view>
+<view style='padding-bottom:20rpx'>
+  <view wx:for="{{datalist}}" wx:key="" wx:for-index="index">
+    <view class='list_one'>
+      <view class='cire'></view>
+      <view class='add_jf'>+{{item.num}}</view>
+      <view class='add_desc'>
+        <text>{{item.memo}}</text>
+      <text>当前积分{{item.jifen}}</text>
+      </view>
+    </view> 
+    <view class='shu_box' id='{{datalist.length}}' wx:if="{{datalist.length-1!=index}}"></view>
+  </view>
+</view>

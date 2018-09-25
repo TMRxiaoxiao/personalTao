@@ -1,0 +1,265 @@
+<!-- 头部导航 -->
+<view class='topNav_box'>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view bindtap='back_Index' class="tab-item {{flag1? ' active':''}}">首页</view>
+    <block wx:for="{{nav}}" wx:key="{{key}}">
+      <view bindtap='xioashi' data-name='{{item.name}}' data-order="{{item.catid}}" class="tab-item {{order==item.catid? ' active':''}}">{{item.name}}</view>
+    </block>
+  </scroll-view>
+</view>
+<view class='tianchong'></view>
+<view class='posLocation'>
+  <navigator url='/city/city?city={{city}}' class='everyOne' catchtap="translate">
+    {{city}}
+    <image src='https://store.ineerg.com/static/mini/images/xiangxia.png'></image>
+  </navigator>
+</view> 
+<view wx:if="{{flag}}">
+  <!-- banner -->
+  <view class='banner_box'>
+    <view class="wrap">
+      <swiper indicator-dots="true" indicator-color="#fff" indicator-active-color="#46cd8b" class="swipers" autoplay="true" current="{{currentSwiper}}">
+        <block wx:for="{{imgs}}" wx:key="{{key}}">
+          <swiper-item>
+            <navigator hover-class='none' class='bannerU' url="{{item.JumpURL}}">
+                <image src="https://store.ineerg.com{{item.BannerImg}}"></image>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!--重置小圆点的样式 -->
+      <!-- <view class="dots">
+        <block wx:for="{{imgs}}" wx:key="{{key}}">
+          <view class="dot{{index == currentSwiper ? ' active1' : ''}}"></view>
+        </block>
+      </view> -->
+    </view>
+  </view>
+  <!-- 热销全部商品 导航 -->
+  <view class='allNav'>
+    <navigator hover-class="none" url='/hotActive/hotActive' class='every'>
+      <view class='icon_box'>
+        <image src='/images/icon_2.png'></image>
+      </view>
+      <view class='icon_desc'>活动专区</view>
+    </navigator>
+    <navigator hover-class="none" open-type='switchTab' class='every' url="../../pages/mall/mall">
+      <view class='icon_box'>
+        <image style='width:44rpx;height:44rpx' src='/images/icon_1.png'></image>
+      </view>
+      <view class='icon_desc'>全部项目</view>
+    </navigator>
+    <navigator hover-class="none" class='every' url='/cardZhuanqu/cardZhuanqu'>
+      <view class='icon_box'>
+        <image style='width:50rpx;height:40rpx' src='/images/icon_4.png'></image>
+      </view>
+      <view class='icon_desc'>卡项专区</view>
+    </navigator>
+    <navigator hover-class="none" class='every' url='/freeTest/freeTest'>
+      <view class='icon_box'>
+        <image style='width:43rpx;height:46rpx' src='/images/icon_3.png'></image>
+      </view>
+      <view class='icon_desc'>免费测试</view>
+    </navigator>
+  </view>
+  <view class='content'>
+    <!-- 正当季 -->
+    <block>
+      <view class='list_box'>
+        <view class='title xa'>{{zhengdangji.head.tit}}</view>
+        <view class='titleDesc'>{{zhengdangji.head.subtit}}</view>
+        <block wx:for="{{zhengdangji.items}}" wx:key="">
+          <navigator url='{{item.uri}}?id={{item.pkid}}' class='contentImg'>
+            <image mode='widthFix' src='https://store.ineerg.com{{item.thumb}}'></image>
+            <view class='img_desc'>{{item.title}}</view>
+          </navigator>
+        </block>
+      </view>
+    </block>
+    <!-- 优惠拼团 -->
+    <view class='list_box'>
+      <view class='title xa'>{{yhptlist.head.tit}}</view>
+      <view class='titleDesc'>{{yhptlist.head.subtit}}</view>
+      <navigator class='contentImg' wx:for="{{yhptlist.items}}" wx:key="" url="{{item.uri}}?id={{item.pkid}}">
+        <image mode='widthFix' src='https://store.ineerg.com{{item.thumb}}'></image>
+        <view class='img_desc'>{{item.title}}</view>
+      </navigator>
+    </view>
+    <!-- 美白美肌 -->
+    <view class='list_box'>
+      <view class='title xa'>{{mbmjdata.head.tit}}</view> 
+      <view class='titleDesc'>{{mbmjdata.head.subtit}}</view>
+      <block wx:for="{{mbmjdata.items}}" wx:key="">
+      <navigator url='{{item.uri}}?id={{item.pkid}}' class='contentImg'>
+        <image mode='widthFix' src='https://store.ineerg.com{{item.thumb}}'></image>
+        <view class='img_desc'>{{item.title}}</view>
+      </navigator>
+      </block>
+    </view>
+    <!-- 福利专区 -->
+    <view class='list_box'>
+      <view class='title xa'>福利专区</view>
+      <view class='titleDesc'>{{titles.flzq}}</view>
+      <view class='photo_list'>
+        <navigator url='/zhengdangji/zhengdangji?id=1' class='list_one'>
+          <view class='top_img'>
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/xrzx.jpg'></image>
+          </view>
+          <view class='bottom_text'>新人专享</view>
+        </navigator>
+        <navigator url='/zhengdangji/zhengdangji?id=3' class='list_one'>
+          <view class='top_img'>
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/xszk.jpg'></image>
+          </view>
+          <view class='bottom_text'>限时折扣</view>
+        </navigator>
+        <navigator url='/Gxiangka/Gxiangka' class='list_one'>
+          <view class='top_img'>
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/gxk.jpg'></image>
+          </view>
+          <view class='bottom_text'>G享卡</view>
+        </navigator>
+        <navigator url='/zhengdangji/zhengdangji?id=2' class='list_one'>
+          <view class='top_img'>
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/pic6 (1).png'></image>
+          </view>
+          <view class='bottom_text'>老客福利</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- G小姐课堂 -->
+    <view class='list_box'>
+      <navigator hover-class='none' url='/gcourse/course_list/course_list' class='title xa'>G小姐课堂</navigator>
+      <view class='titleDesc'>{{titles.gclassroom}}</view>
+      <view class='border_box'>
+        <navigator url="/gcourse/couse_content/couse_content?id={{gketang.Id}}" class='contentImg acc'>
+          <image mode='widthFix' src='https://store.ineerg.com{{gketang.MainImg}}'></image>
+        </navigator>
+        <view class='bottom_text_zan'>
+          <text class='Gxj_desc'>{{gketang.Title}}</text>
+          <view style='margin-top:18rpx;overflow:hidden'>
+            <view class='greenTitle'>#G小姐课堂</view>
+            <view class='title1'>
+              <image src='https://store.ineerg.com/static/mini/images/zan.png'></image>
+              <text style='font-size:20rpx;color:#afafaf;margin-left:6rpx;margin-top:-6rpx'>{{gketang.UpCount}}</text>
+            </view>
+            <view style='font-size:30rpx;' class='title2'>
+              <image src='https://store.ineerg.com/static/mini/images/view.png'></image>
+              <text class='t1b'>{{gketang.LookCount}}</text>
+            </view>
+            <view style='clear:both'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- G小姐俱乐部 -->
+  <view class='list_box'>
+    <navigator hover-class='none' url='/gcourse/gclass/gclass' class='title' style='margin-left:27rpx'>G小姐俱乐部</navigator>
+    <view class='titleDesc' style='margin-left:27rpx'>{{titles.gclub}}</view>
+    <view class='gxjkt_banner'>
+      <swiper current="{{cur}}" bindchange="curr" class='gxj_sw' previous-margin="60rpx">
+        <block wx:for="{{gjulebu}}" wx:key="{{index}}" wx:if="{{index<2}}">
+          <swiper-item class="ban_one" style="height:500rpx">
+            <navigator class="navi" url='/gcourse/gclassContent/gclassContent?id={{item.Id}}'>
+              <image mode='widthFix' class="alther" src="https://store.ineerg.com{{item.ImgURL}}"></image>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 分布地图 -->
+  <view class='list_box'>
+    <view class='title' style='margin-left:27rpx'>分布地图</view>
+    <view class='titleDesc' style='margin-left:27rpx'>加盟商覆盖全国</view>
+    <view class='map_img'>
+      <image src='https://store.ineerg.com/static/mini/images/map1.png'></image>
+    </view>
+    <view class='cjz'>
+      <view class='cjz_icon'></view>
+      <view class='cjz_font'>营业中</view>
+      <view style='clear:both'></view>
+    </view>
+    <view class='yyz'>
+      <view class='yyz_icon'></view>
+      <view class='cjz_font'>筹建中</view>
+      <view style='clear:both'></view>
+    </view>
+    <view class='fen_desc'>在全国主要城市设立
+      <view style='display:inline;font-size:22rpx;'>365</view> 营业网点，及时应对各种爱美需求。</view>
+  </view>
+  <view class='logo'>
+    <image src='https://store.ineerg.com/static/mini/images/neergLogo.png'></image>
+  </view>
+  <view style='margin-bottom:48rpx'>
+    <view bindtap='clickShibie' class='erweima'>
+      <image src='/images/wem.png'></image>
+    </view>
+    <view class='text_e'>
+      <text>关注公众号\n做护肤达人</text>
+    </view>
+  </view>
+  <view class='text_view' style='margin-bottom:180rpx'>
+    <view>
+      <navigator hover-class='none' url=''>连锁品牌</navigator>
+    </view>
+    <view>
+      <navigator hover-class='none' url=''>门店体验</navigator>
+    </view>
+    <view>
+      <navigator hover-class='none' url=''>星级服务</navigator>
+    </view>
+    <view>
+      <navigator hover-class='none' url=''>价格透明</navigator>
+    </view>
+    <view>
+      <navigator hover-class='none' url=''>真实评价</navigator>
+    </view>
+    <view>
+      <navigator hover-class='none' url=''>闪电退款</navigator>
+    </view>
+    <text style='clear:both'></text>
+  </view>
+  <view style='width:750rpx;height:20rpx'></view>
+</view>
+
+<!-- 清洁系列 -->
+<view wx:if="{{!flag}}">
+  <!-- 清洁Banner -->
+  <view class='clean_banner'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/xilie/cleanBan.jpg'></image>
+    <view class='wenzi'>
+      <text>{{name}}</text>
+      <!-- <text>一种护肤方式</text> -->
+      <text>量肤定制 健康自然</text>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class='content'>
+    <view class='list' wx:for="{{clean_list}}" wx:key="{{key}}" wx:for-item="item">
+      <view class='img_box'>
+        <image mode='widthFix' src="https://store.ineerg.com/{{item.thumb}}"></image>
+      </view>
+      <view class='bottom_box'>
+        <view style='font-size:30rpx' class='title'>{{item.name}}</view>
+        <view class='title_desc'>
+          <view class='time_logo'>
+            <image src='https://store.ineerg.com/static/mini/images/xilie/pic1 (3).png'></image>
+          </view>
+          <text>{{item.los}}</text>
+          <view class='time_logo'>
+            <image src='https://store.ineerg.com/static/mini/images/xilie/pic1 (1).png'></image>
+          </view>
+          <text>{{item.priod}}</text>
+          <view class='time_logo'>
+            <image src='https://store.ineerg.com/static/mini/images/xilie/pic1 (2).png'></image>
+          </view>
+          <text>{{item.scount}}人已体验</text>
+        </view>
+        <navigator url='/saleListContent/saleListContent?id={{item.id}}' class='more_but'>查看详情</navigator>
+      </view>
+    </view>
+  </view>
+</view>
+

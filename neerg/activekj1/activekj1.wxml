@@ -1,0 +1,139 @@
+<!--activekj1/activekj1.wxml-->
+<!--activeKj/activeKj.wxml-->
+<view class='first'>
+  <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/phpotos1.jpg'></image>
+</view>
+<view class='back'>
+  <view class='proInfo'>
+    <image class='imgF' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (3).png'></image>
+    <view class='img'>
+      <image mode='widthFix' src='https://store.ineerg.com{{proIntro.thumb}}'></image>
+    </view>
+    <view class='huoInfo'>
+      <text>{{proIntro.title}}</text>
+      <text>
+        {{proIntro.subtitle}}
+      </text>
+    </view>
+    <view class='process'>
+        <view class='pro' style="width:{{width}}rpx"></view>
+        <view class='priceNew' style="left:{{width - 50}}rpx">
+            现价:￥{{newprice}}
+        </view>
+    </view>
+    <view class='jiage'>
+    <view class='secondBox'>
+            <text>原价</text>
+            <text>￥{{proIntro.orprice}}</text>
+        </view>
+        <view class='firstBox'>
+            <text>底价</text>
+            <text>￥{{proIntro.disprice}}</text>
+        </view>
+        
+    </view>
+    <image class='imgL' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (7).png'></image>
+  </view>
+  <view class='btnBuy'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (2).png'></image>
+    <button wx:if="{{flag==false&&yqk==false}}" class="secondKil" open-type='share'>立即参与</button>
+    <button wx:if="{{flag&&yqk==false}}" class="secondKil" bindtap='joinKj'>立即参与</button>
+    <button wx:if="{{flag == false && yqk}}" class="secondKil" bindtap='buyP'>立即购买</button>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (2).png'></image>
+    <button wx:if="{{flag==false}}" bindtap='Kprice' class="kjprc">帮好友砍价</button>
+    <button wx:if="{{canIUse && flag}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="kjprc">帮好友砍价</button>
+  </view>
+  <view class='timeOver'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (5).png'></image>
+    <view class='time'>
+        <text>{{day1}}</text> 天 <text>{{hour1}}</text> 时 <text>{{min1}}</text> 分 <text>{{sec1}}</text> 秒
+    </view>
+  </view>
+  <view class='bodyKJ'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (4).png'></image>
+    <text class='tit'>来看看小伙伴们砍了多少</text>
+  </view>
+  <view class='proInfo hero'>
+    <image class='imgF' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (3).png'></image>
+    <view class='main'>
+        <block wx:for="{{proIntro.start.logs}}" wx:key>
+            <view class="oneBox">
+                <image mode="widthFix" src="{{item.memberInfo.avatar}}"></image>
+                <view>
+                    <text>{{item.memberInfo.name}}</text>
+                    <text>帮好友砍价领优惠券</text>
+                </view>
+                <image mode="widthFix" src="https://store.ineerg.com/static/mini/images/kanIcon.png"></image>
+                <text>砍掉</text>
+                <text>￥{{item.fee}}</text>
+            </view>
+        </block>
+        <view style='font-size:24rpx;color:#333' wx:if="{{proIntro.start.logs.length==0}}">暂无小伙伴砍价，快去参加吧!</view>
+    </view>
+    <image class='imgL' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (7).png'></image>
+  </view>
+  <view class='proInfo hero clearlove'>
+    <image class='imgF' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (3).png'></image>
+    <view class='main'>
+        <text>砍价说明</text>
+        <text>有效时间：{{timeOver}}</text> 
+        <text>{{proIntro.intro}}</text>
+    </view>
+    <image class='imgL' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (7).png'></image>
+  </view>
+  <view class='backIndex'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (6).png'></image>
+    <text bindtap='backMore' class='moreKJ'>项目列表</text>
+    <text bindtap='backIndexs' class='indexBck'>回到首页</text>
+  </view>
+  <view class='proInfo hero clearlove uzi'>
+    <image class='imgF' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (3).png'></image>
+    <view class='mainBix'>
+        <rich-text nodes="{{proIntro.introduce}}" class='richT'>这里是富文本</rich-text>
+    </view>
+    <image class='imgL' mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (7).png'></image>
+  </view>
+  <view class='dibu'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/photos (1).png'></image>
+  </view>
+</view>
+<!-- 弹出提示 -->
+<view class='alertMessage' wx:if="{{flas}}">
+    <view class='duiBox'>
+        <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (8).png'></image>
+    </view>
+    <view class='kPrice'>
+        <text>您成功帮好友砍价</text><text>{{cutedPrice}}</text><text>元！</text>
+    </view>
+    <view class='quanList'>
+        <text>恭喜您！获得neerG红包优惠券，点击领取！</text>
+        <block wx:for="{{quanList}}" wx:key>
+            <view class='listOne'>
+                <view class='prices'><text>￥</text>{{item.fee}}</view>
+                <view class='priceInfo'><text>{{item.name}}</text><text>{{item.exp}}</text></view>
+            </view>
+        </block>
+        <view class='getBox' bindtap="getQuan" wx:if="{{glag}}">
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (2).png'></image>
+            <text>领取优惠券</text>
+        </view>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='getBox' wx:if="{{glag==false}}">
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (2).png'></image>
+            <text>领取优惠券</text>
+        </button>
+    </view>
+    <view class='del' bindtap='del'>
+        <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (4).png'></image>
+    </view>
+</view>
+<!-- 弹出砍价活动已结束 -->
+<view class='clearlove7' wx:if="{{mark}}">
+    <view class='markBox'>
+        <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/gantan.png'></image>
+        <view class='textCon'>
+            <text>您的好友砍价活动已经结束！</text>
+            <text bindtap='koina' class='joinBox'>我要参加活动</text>
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,227 @@
+/* orders/orderPay/orderPay.wxss */
+.list{
+	width: calc( 100vw - 54rpx);
+	padding: 0 34rpx 47rpx;
+	border-radius: 5rpx;
+	box-sizing: border-box;
+	box-shadow: 0px 6px 22px #d7d7d7;
+	margin: 0 auto 68rpx;
+	overflow: hidden;
+}
+.list .time_state{
+	width: 100%;
+	height: 55px;
+	line-height: 60px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	border-bottom: solid 1rpx #ddd;
+}
+.list .time_state .time,
+.list .time_state .state{
+	flex: 1;
+	color: #333;
+	font-size: 21rpx;
+}
+.list .time_state .time{text-align: left}
+.list .time_state .state{text-align: right}
+.list .details{
+	width: 100%;
+	padding: 52rpx 0;
+	overflow: hidden;
+	box-sizing: border-box;
+	border-bottom: solid 1rpx #ddd;
+}
+.list .details image{
+	float: left;
+	width: 223rpx;
+	height: 133rpx;
+	border-radius: 5rpx;
+}
+.list .details .right{
+	float: right;
+	width: 364rpx;
+	color: #333;
+	font-size: 25rpx;
+	line-height: 1;
+	font-weight: bold;
+	text-align: right;
+}
+.list .details .right .title{
+	float: left;
+	height: 89rpx;
+	font-size: 25rpx;
+	text-align: left;
+  width:238rpx;
+}
+.list .details .right .price{
+	float: right;
+}
+.list .details .right .number{
+	float: right;
+	width: 100%;
+}
+.list .real_payment{
+	width: 100%;
+	color: #333;
+	font-size: 25rpx;
+	line-height: 1;
+	text-align: right;
+	font-weight: bold;
+	padding: 25rpx 0 45rpx;
+}
+.list .real_payment text{
+	color: #ff2d2d;
+}
+.list .btn{
+	display: flex;
+	justify-content: flex-end;
+}
+.list .btn .delete,
+.list .btn .evaluation{
+	float: right;
+	color: #333;
+	font-size: 25rpx;
+	width: 172rpx;
+	height: 69rpx;
+	line-height: 67rpx;
+	text-align: center;
+	border-radius: 69rpx;
+	border: solid 1rpx #333;
+	margin-left: 20rpx;
+}
+.content{
+  padding-top: 50rpx
+}
+.fixed_btn{
+  width: 750rpx;
+  height: 124rpx;
+  border-top: 1px solid #dddddd;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.pay_box{
+  height: 30rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25rpx;
+  color: #333333
+}
+.pay_box text:nth-child(2){
+  color: #ff2d2d
+}
+.pay_btn{
+  width: 278rpx;
+  height: 83rpx;
+  background: #46cc8c;
+  border-radius: 40rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 21rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 83rpx;
+  text-align: center
+}
+.saleMore{
+  width: 100%;
+  padding-bottom: 24rpx;
+  padding-top: 24rpx;
+  border-bottom: 1px solid #ddd;
+  display:flex;
+  justify-content: space-between;
+  font-size: 25rpx;
+  position: relative;
+  color: #333;
+  box-sizing: border-box
+}
+.saleMore image{
+  width:12rpx;
+  height:18rpx; 
+  position: absolute;
+  right: 0;
+  bottom: 28rpx
+}
+.saleMore text:nth-child(2){
+  margin-right: 30rpx
+}
+.containerBox{
+  width: 750rpx;
+  height: calc(100vh - 0rpx);
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  display: none
+}
+.saleBoxM{
+  width: 750rpx;
+  height: 60%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.saleBoxM > text{
+  display: block;
+  text-align: center;
+  color: #333;
+  font-size: 26rpx;
+  margin-top: 24rpx
+}
+.radio{
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  border: 1xp solid #fff;
+}
+.aa{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content{
+  width: calc( 100vw - 54rpx);
+  margin: 0 auto;
+  font-size: 26rpx;
+  color: #333
+}
+
+.aa > text{
+  margin-top: 7rpx
+}
+.closeBox{
+  width: 750rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  background: #5AB17C;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  transition: all 0.5s;
+}
+.show{
+  display: block
+}
+.dis{
+  opacity: 0;
+  display: none
+}

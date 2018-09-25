@@ -1,0 +1,63 @@
+<!--orders/orderPay/orderPay.wxml-->
+<view class='content'>
+  <block>
+    <view class="list">
+      <view class="time_state">
+        <text class="time">消费项目</text>
+      </view>
+      <view class="details">
+        <image src="https://store.ineerg.com/{{detailed.thumb}}"></image>
+        <view class="right">
+          <text class="title">{{detailed.name}}</text>
+          <text class="price" wx:if="{{detailed.promo!=null}}">￥{{detailed.promo.disprice}}</text>
+          <text class="price" wx:else>￥{{detailed.price}}</text>
+          <text class="number">X1</text>
+        </view>
+      </view>
+      <view wx:if="{{promotype==''&&datalist.length!=0}}" bindtap='showSale' class='saleMore'>
+        <text>门店优惠</text>
+        <text>{{tit}}</text>
+        <image src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+      </view>
+      <view class="real_payment">小计:
+        <text wx:if="{{detailed.promo!=null}}">￥{{detailed.promo.disprice}}</text>
+        <text wx:else>￥{{detailed.price}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 优惠页面弹出 -->
+<view class="containerBox {{flag==true?'show':'dis'}}">
+  <view class='saleBoxM'>
+    <text>店铺优惠</text>
+    <view class='content'>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <block wx:for="{{datalist}}" wx:key="" wx:for-index="index">
+          <label class="radio">
+            <view class='aa'>
+              <text>{{item.name}}</text>
+              <radio color="#5ab17c" data-tit='{{item.fee}}' value="{{index}}" checked="{{item.checked}}" />
+            </view>
+          </label>
+        </block>
+         <label class="radio">
+            <view class='aa'>
+              <text>不使用优惠券</text>
+              <radio color="#5ab17c" value="00" checked="true" />
+            </view>
+          </label> 
+      </radio-group>
+    </view>
+    <view bindtap='close' class='closeBox'>关闭</view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class='fixed_btn'>
+  <view class='pay_box'>
+    <text>实付款：</text>
+    <text wx:if="{{detailed.promo!=null}}">￥{{detailed.promo.disprice}}</text>
+    <text wx:else>￥{{detailed.price}}</text>
+  </view>
+  <view class='pay_btn' bindtap='pay_btn'>确认付款</view>
+</view>

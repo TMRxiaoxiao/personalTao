@@ -1,0 +1,45 @@
+<!--Gxiangka/Gxiangka.wxml-->
+<!--orders/coupons/coupons.wxml-->
+<!-- 导航 -->
+<view class='top_nav'>
+  <view data-current="0" bindtap='click' class="nav_one{{currentTab==0?' border':''}}">购买G享卡</view>
+  <view data-current="1" bindtap='click' class="nav_one{{currentTab==1?' border':''}}">我的G享卡</view>
+
+</view>
+<view style='height:102rpx'></view>
+<!-- 购买G享卡 -->
+<view data-current="0" class="ds{{currentTab==0? ' show':''}}">
+  <view class='content'>
+    <block wx:for="{{buyGcard}}" wx:key="">
+      <navigator url="/cardDetail1/cardDetail1?id={{item.id}}&price={{item.price}}&count={{item.count}}&type=card&forsale={{item.forsale}}" class='list_one buyCard' style='height:424rpx'>
+        <image mode='widthFix' src='https://store.ineerg.com{{item.thumb}}'></image>
+      </navigator>
+    </block>
+  </view>
+  <!-- <view bindtap='call'>拨打电话</view> -->
+</view>
+<!-- 我的G享卡 -->
+<view data-current="1" class="ds{{currentTab==1? ' show':''}}">
+  <view class='content'>
+    <!-- <view class='list_one'>
+      <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/Gcard/Gcard.jpg'></image>
+    </view> -->
+    <view class='input_box'>
+      <input bindinput="cardGet" placeholder-class="place" placeholder='请输入卡号' class='input' type='text'></input>
+      <view bindtap='jihuoCard' class='get_button'>卡片激活</view>
+    </view>
+    <view wx:if="{{gCard!==null||gCard!==undefined||gCard!==''}}">
+      <view class='myCard'>我的卡片</view>
+      <block wx:for="{{gCard}}" wx:key="">
+        <view url="" class='list_one' style='height:424rpx'>
+          <image  class="{{item.canuse==false? ' kac':''}}" src='https://store.ineerg.com{{item.card_detail.thumb}}'></image>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{gCard==null||gCard==undefined||gCard==''}}">
+      <view class='zanwushuju' style='top:242rpx'>
+        <image src='/images/tishi.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

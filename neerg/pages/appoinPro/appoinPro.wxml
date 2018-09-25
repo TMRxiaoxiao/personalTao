@@ -1,0 +1,21 @@
+<view class='title'>
+  <text>选择系列</text>
+  <text>护肤项目</text>
+</view>
+<view class='content'>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <block wx:for="{{datalist}}" wx:key="" wx:for-index="index">
+      <label class="radio">
+        <view class='aa'>
+          <text>{{item.name}}</text>
+          <radio color="#5ab17c" value="{{index}}" checked="{{item.checked}}"/>
+        </view>
+        <view class='price'>￥{{item.price}}</view>
+      </label>
+    </block>
+  </radio-group>
+</view>
+<view class='addBox'></view>
+<view class='btnNext'>
+  <view bindtap='tiao' class='button'>确认</view>
+</view>

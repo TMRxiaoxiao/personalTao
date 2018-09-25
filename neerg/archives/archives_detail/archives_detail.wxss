@@ -1,0 +1,182 @@
+/* pages/archives_detail/archives_detail.wxss */
+.box {
+}
+.detail_top {
+  width: calc(100% - 56rpx);
+  height: calc(396rpx * 0.7);
+  padding: 28rpx;
+  position: relative
+}
+.back{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1
+}
+.date {
+  font-size: 32rpx;
+  color: #befddb;
+  margin-top: calc(50rpx *0.7);
+  margin-bottom: 28rpx;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50rpx;
+}
+.title >view:first-child{
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.title >view:last-child{
+  color: #fff;
+}
+.title >view:last-child > view {
+  float: left;
+  margin-left: 10rpx;
+  line-height: 70rpx;
+}
+.title >view:last-child > view:first-child{
+  font-size: 70rpx;
+}
+.title >view:last-child > view:last-child{
+  padding-top: 5rpx;
+}
+.chart {
+  width: 700rpx;
+  height: calc(884rpx * 0.7);
+  background: #fff;
+  box-shadow: 0 10px 20px #f0f0f0;
+}
+/* 肌肤状况 */
+.skin_things {
+  margin-top: 600rpx;
+  padding: 28rpx;
+  margin-bottom: 28rpx;
+  background: #fff;
+}
+.skin_title {
+  font-size: 40rpx;
+  color: #333333;
+  margin-bottom: 56rpx;
+  font-weight: bold
+}
+.skin_des > view:first-child{
+  font-size: 36rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+  font-weight: bold
+}
+.skin_des > view:last-child{
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 56rpx;
+}
+.skin_list {
+  width: 100%;
+  min-height: 100rpx;
+  margin-top: 50rpx;  
+}
+.left {
+  width: 77rpx;
+  height: 100%;
+  float: left;
+}
+.left > image {
+  width: 100%;
+  height: 77rpx;
+  display: block;
+}
+.right{
+  width: calc(100% - 100rpx);
+  float: right;  
+}
+.right > view:first-child {
+  font-size: 36rpx;
+  color: #333333;
+}
+.right > view:last-child{
+  color: #666666;
+  font-size: 30rpx;
+  line-height: 60rpx
+}
+.bac {
+  background: #f7f7f7;
+  width: 100%;
+  height: 28rpx;
+}
+/* 咨询师建议 */
+.teacher {
+  padding: 28rpx;
+  margin-bottom: 28rpx;
+  background: #fff;
+}
+.teacher_box {
+  width: calc(100% - 56rpx);
+  /* height: 350rpx; */
+  background: #31cd7f;
+  padding: 35rpx;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: left;
+  position: relative;
+}
+.teacher_box > view {
+  height: 0px;
+  width: 0px;
+  border-left: 11px solid transparent;
+  border-bottom: 12px solid #31cd7f;
+  border-right: 11px solid transparent;
+  position: absolute;
+  left: 77rpx;
+  top: -15rpx;
+}
+/* 皮肤影像 */
+.video{
+  padding: 28rpx;
+  margin-bottom: 50rpx;
+}
+.video_box {
+  width: 100%;
+  height: 350rpx;
+  display: flex;
+  justify-content: space-between;
+
+}
+.video_left {
+  width: calc(660rpx * 0.7);
+  height: 350rpx;
+  background: #666666;
+}
+.video_right{
+  height: 100%;
+  width: calc(310rpx * 0.7);
+}
+.video_right > view{
+  height: calc(240rpx * 0.7);
+  background: #666666;
+  position: relative;
+}
+.video_right > view:first-child{
+  margin-bottom: 13rpx;
+}
+.video_box image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.video_right_bottom{
+  width: 100%;
+  height: 35rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 35rpx;
+  font-size: 30rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #a7a7a7;
+}

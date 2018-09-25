@@ -1,0 +1,90 @@
+<view class='cant'>
+  <view class='yuh'>
+    <view class='yuha'>
+      <image src='https://store.ineerg.com{{cantuan.photoimgs[0]}}' mode="widthFix" />
+    </view>
+    <view class='yuhb'>
+      <view class='yuhba'>
+        <view class='yuhba-a' wx:if="{{cantuan.promo.type==3}}" style='background:#a2d063'>拼团</view>
+        <view class='yuhba-a' wx:elif="{{cantuan.promo.type==2}}" style='background:#f36541'>秒杀</view>
+        <view class='yuhba-a' wx:elif="{{cantuan.promo.type==1}}" style='background:#fec463'>特卖</view>
+        <view class='yuhba-b'>{{cantuan.name}}</view>
+      </view>
+      <view class='yuhbb'>{{cantuan.intro}}</view>
+    </view>
+    <view class='yuhc'>
+      <view style='color:#a2d063' wx:if="{{cantuan.promo.type==3}}" class='yuhca'>
+        <image src='https://store.ineerg.com/static/mini/images/hot2.png' mode="widthFix" />{{ptMess.num1}}人已参团</view>
+      <view style='color:#f36541' wx:if="{{cantuan.promo.type==2}}" class='yuhca'>
+        <image src='https://store.ineerg.com/static/mini/images/hot1.png' mode="widthFix" />{{ptMess.num1}}人已参团</view>
+      <view style='color:#fec463' wx:if="{{cantuan.promo.type==1}}" class='yuhca'>
+        <image src='https://store.ineerg.com/static/mini/images/hot3.png' mode="widthFix" />{{ptMess.num1}}c</view>
+    </view>
+  </view>
+  <view class='canb'>
+    <text style='color:#a2d063' class='canb-a' wx:if="{{cantuan.promo.type==3}}">{{ptMess.people}}</text>
+    <text style='color:#f36541' class='canb-a' wx:if="{{cantuan.promo.type==2}}">{{ptMess.people}}</text>
+    <text style='color:#fec463' class='canb-a' wx:if="{{cantuan.promo.type==1}}">{{ptMess.people}}</text>
+    人团，拼团价：
+    <text style='color:#a2d063' class='canb-a' wx:if="{{cantuan.promo.type==3}}">￥{{ptMess.disprice}}</text>
+    <text style='color:#f36541' class='canb-a' wx:if="{{cantuan.promo.type==2}}">￥{{ptMess.disprice}}</text>
+    <text style='color:#fec463' class='canb-a' wx:if="{{cantuan.promo.type==1}}">￥{{ptMess.disprice}}</text>
+    单购价格￥{{ptMess.orprice}}，组团购买省￥
+    <text class='canb-b'>{{ptMess.orprice-ptMess.disprice}}</text>
+  </view>
+  <view class='canc' wx:if="{{cantuan.promo.type==3}}" style='background:#a2d063'>
+    <image src='https://store.ineerg.com/static/mini/images/clock2.png' mode="widthFix" />距离拼团结束{{clock}}
+  </view>
+  <view class='canc' wx:if="{{cantuan.promo.type==2}}" style='background:#f36541'>
+    <image src='https://store.ineerg.com/static/mini/images/clock2.png' mode="widthFix" />距离秒杀结束{{clock}}
+  </view>
+  <view class='canc' wx:if="{{cantuan.promo.type==1}}" style='background:#fec463'>
+    <image src='https://store.ineerg.com/static/mini/images/clock2.png' mode="widthFix" />距离特卖结束{{clock}}
+  </view>
+
+  <view class='cand'>
+    <view class='cand-a'>
+      <block wx:for="{{ptMess.tuaners}}">
+        <view class='cand-aa'>
+          <view class='cand-aaimg'>
+            <image src='{{item.avatar}}' mode="widthFix" />
+          </view>
+          {{item.name}}
+          <view wx:if="{{item.is_create_tuan==1}}" class='candat'>团长</view>
+        </view>
+      </block>
+    </view>
+    <view class='cand-b'>
+      还差
+      <text style='color:#a2d063' wx:if="{{cantuan.promo.type==3}}">{{ptMess.people - ptMess.groupnumber}}</text>
+      <text style='color:#f36541' wx:if="{{cantuan.promo.type==2}}">{{ptMess.people - ptMess.groupnumber}}</text>
+      <text style='color:#fec463' wx:if="{{cantuan.promo.type==1}}">{{ptMess.people - ptMess.groupnumber}}</text>
+      人成团
+    </view>
+    <view class='cand-c'>
+      赶快来加入我们一起变美！
+    </view>
+    <navigator class='cand-d' url="/orders/orderPay/orderPay?id={{id}}&tid={{tid}}&shopid={{cantuan.promo.shopid}}">马上参团</navigator>
+  </view>
+  <!-- <view class='cane'>
+    <view class='canea'>其它团品</view>
+    <block wx:for="{{pintuan}}" wx:for-item="item" wx:for-index="op" >
+      <view class='caneb'>
+        <view class='caneb-a'>
+          <image src='{{item.member.avatar}}' mode="widthFix" />
+        </view>
+        <view class='caneb-b'>
+          <view class='caneb-ba'>
+            <view class='caneb-baa'>{{item.member.name}}</view>
+            <view class='caneb-bab'>还差{{cantuan.promo.people-item.groupnumber}}人成团</view>
+          </view>
+          <view class='caneb-bb'>
+            <image src='https://store.ineerg.com/static/mini/images/clock1.png' mode="widthFix" />
+            <text>{{yxsjlsit[op].day}}天 {{yxsjlsit[op].hou}} 小时 {{yxsjlsit[op].min}} 分{{yxsjlsit[op].sec}}.{{yxsjlsit[op].micro_sec}}秒结束</text>
+          </view>
+        </view>
+        <view data-aid='{{item.Id}}' class='caneb-c' bindtap='updateTuan'>参团</view>
+      </view>
+    </block>
+  </view> -->
+</view>

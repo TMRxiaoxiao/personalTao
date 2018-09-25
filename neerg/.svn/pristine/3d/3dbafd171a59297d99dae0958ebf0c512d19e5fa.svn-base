@@ -1,0 +1,175 @@
+<!--shopping/shopping.wxml-->
+<view class='fanye'><text>{{curr}}</text>/<text>{{totalNum}}</text></view>
+
+<swiper bindchange='change'  class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='price_box'>
+  <view class='first'>
+    <text>晒后紧急修复管理</text>
+    <view class='pir'>
+      <text>￥</text>
+      <text>280</text>
+    </view>
+  </view>
+  <view class='second'>
+    <text>这里是这个活动项目介绍文字...adsasdasdas</text>
+    <text class='before_peice'>
+      <text>门市价：</text>
+      <text>￥988</text>
+    </text>
+  </view>
+</view>
+<view class='mark_box'>
+  <view class='mark_con'>
+    <view class='everyOne'>
+      <image src='https://store.ineerg.com/static/mini/images/times.png'></image>
+      <text>30分钟</text>
+    </view>
+    <view class='everyOne'>
+      <image src='https://store.ineerg.com/static/mini/images/date.png'></image>
+      <text>30分钟</text>
+    </view>
+    <view class='everyOne'>
+      <image src='https://store.ineerg.com/static/mini/images/face.png'></image>
+      <text>30分钟</text>
+    </view>
+  </view>
+</view>
+<view class='order_message'>
+  <view class='list_one'>
+    <text>有效时间:</text>
+    <text>2018.05.31-2019.05.30长期有效</text>
+  </view>
+  <view class='list_one'>
+    <text>购买数量:</text>
+    <text>1</text>
+  </view>
+  <view class='list_one'>
+    <text>服务承诺:</text>
+    <text>随时退 | 过期退</text>
+  </view>
+</view>
+<view class='gmxz'>购买须知</view>
+<view class='gmCon'>
+  <view class='main'>
+    <text>预约信息.请您提前一天预约</text>
+    <text>适用人群.每张团购券最多1人使用</text>
+    <text>适用人群.只适用于初次到店非商户会员使用</text>
+    <text>规则提醒.不再与其他优惠同享</text>
+    <text>温馨提示.如需团购券发票，请您在消费时向商户咨询</text>
+  </view>
+</view>
+<view class='gmxz'>服务详情</view>
+<view class='gmCon'>
+  <view class='main'>
+    <text>预约信息.请您提前一天预约</text>
+    <text>适用人群.每张团购券最多1人使用</text>
+    <text>适用人群.只适用于初次到店非商户会员使用</text>
+    <text>规则提醒.不再与其他优惠同享</text>
+    <text>温馨提示.如需团购券发票，请您在消费时向商户咨询</text>
+  </view>
+</view>
+
+
+<view class='gmxz'>全部点评</view>
+<view class='comment'>
+  <block>
+    <view class='comment_list'>
+      <view class='photo_img_body'>
+        <image src='https://store.ineerg.com/static/mini/images/course/wxtx (3).png'></image>
+      </view>
+      <view class='right_name_desc'>
+        <view class='namebox'>如风</view>
+        <view class='descbox'>说点什么，让更多爱美的伙伴了解变美的过程~</view>
+        <view class='before_time'>19小时之前</view>
+        <view class='mall_res'>
+          商家回应：感谢您的评价，让更多爱美的伙伴了解变美的过程， 作为一个八零后，身体各方面机能都应该已经走下坡路了，不要 不敢面对就是这么残酷！但是一直被问怎么保养皮肤。
+        </view>
+      </view>
+    </view>
+  </block>
+  <block>
+    <view class='comment_list'>
+      <view class='photo_img_body'>
+        <image src='https://store.ineerg.com/static/mini/images/course/wxtx (3).png'></image>
+      </view>
+      <view class='right_name_desc'>
+        <view class='namebox'>如风</view>
+        <view class='descbox'>说点什么，让更多爱美的伙伴了解变美的过程~</view>
+        <view class='before_time'>19小时之前</view>
+        <view class='tupian'>
+          <view class='tupian_one'><image src='https://store.ineerg.com/static/mini/images/course/pltu (3).png'></image></view>
+          <view class='tupian_one'><image src='https://store.ineerg.com/static/mini/images/course/pltu (1).png'></image></view>
+          <view class='tupian_one'><image src='https://store.ineerg.com/static/mini/images/course/pltu (2).png'></image></view>
+        </view>
+        <view class='mall_res'>
+          商家回应：感谢您的评价，让更多爱美的伙伴了解变美的过程， 作为一个八零后，身体各方面机能都应该已经走下坡路了，不要 不敢面对就是这么残酷！但是一直被问怎么保养皮肤。
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 推荐项目 -->
+<view class='gmxz'>推荐项目</view>
+<swiper class='tjxm_swiper' >
+  <swiper-item wx:for="{{imgs}}" style="width:470rpx;height:100%">
+    <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    <view class='title_desc'>
+      <text>拼团</text>
+      <text>女神靓丽肌肤SPA</text>
+      <text>￥99</text>
+    </view>
+  </swiper-item>
+</swiper>
+<view class='tj_ct'>
+  <view class='suolue_img'>
+    <image src='https://store.ineerg.com/static/mini/images/bodyImg1.png'></image>
+  </view>
+  <view class='center_box'>
+    <text>秒杀</text>
+    <text>女神靓丽肌肤SPA</text>
+    <text>这里是这个活动项目介绍文字...asdsdfsf</text>
+  </view>
+  <view class='right_price'>
+    <text>￥199</text>
+    <text>￥588</text>
+  </view>
+</view>
+<view class='tj_ct'>
+  <view class='suolue_img'>
+    <image src='https://store.ineerg.com/static/mini/images/bodyImg1.png'></image>
+  </view>
+  <view class='center_box'>
+    <text>秒杀</text>
+    <text>女神靓丽肌肤SPA</text>
+    <text>这里是这个活动项目介绍文字...asdsdfsf</text>
+  </view>
+  <view class='right_price'>
+    <text>￥199</text>
+    <text>￥588</text>
+  </view>
+</view>
+<view class='tj_ct'>
+  <view class='suolue_img'>
+    <image src='https://store.ineerg.com/static/mini/images/bodyImg1.png'></image>
+  </view>
+  <view class='center_box'>
+    <text></text>
+    <text>女神靓丽肌肤SPA</text>
+    <text>这里是这个活动项目介绍文字...asdsdfsf</text>
+  </view>
+  <view class='right_price'>
+    <text>￥199</text>
+    <text>￥588</text>
+  </view>
+</view>
+<!-- 抢购按钮固定 -->
+<view style='width:750rpx;height: 230rpx;'></view>
+<view class='cover_box'>
+  <navigator url="/orders/orderPay/orderPay" class='btn_box'>马上购买</navigator>
+</view>

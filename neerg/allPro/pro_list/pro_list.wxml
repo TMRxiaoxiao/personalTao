@@ -1,0 +1,85 @@
+<view class="content">
+  <view class="left">
+    <block wx:for="{{note}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+    </block>
+  </view>
+  <view class="right">
+    <block wx:for="{{note}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+    </block>
+  </view>
+</view>
+<view class="{{back == false ? 'show_nav':'aa'}}">
+  <view bindtap='back' class='xiala_box'><image mode='widthFix' src='/images/allPro/zhankai.png'></image></view>
+  <view class='list_every colors all_p' style='margin-top:20rpx'>
+      <image mode='widthFix' src='/images/allPro/icon1.png'></image>
+      <text class='color1'>全部项目</text>
+    </view>
+</view>
+<view class="nav_box{{back == true ? '':' back'}}">
+  <view bindtap='back' class='xiala_box'><image mode='widthFix' src='/images/allPro/xiala.png'></image></view>
+  <view class='list_xilie'>
+    <view class='list_every colors'>
+      <image mode='widthFix' src='/images/allPro/icon1.png'></image>
+      <text class='color1'>全部项目</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (4).png'></image>
+      <text class='color1'>清洁系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (5).png'></image>
+      <text class='color1'>补水系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (6).png'></image>
+      <text class='color1'>敏感肌系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (7).png'></image>
+      <text class='color1'>美白系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (8).png'></image>
+      <text class='color1'>痘痘肌系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (1).png'></image>
+      <text class='color1'>抗老化系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (2).png'></image>
+      <text class='color1'>身体塑性系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (3).png'></image>
+      <text class='color1'>眼部系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (3).png'></image>
+      <text class='color1'>微晶系列</text>
+    </view>
+    <view class='list_every'>
+      <image mode='widthFix' src='/images/allPro/icon2 (3).png'></image>
+      <text class='color1'>焕肤系列</text>
+    </view>
+  </view>
+</view>
+<!--  下面是一个模块 -->
+<template name="item">
+  <navigator url="/shopping/shopping" class="item">
+    <image class="item-img" src="{{url}}" mode="widthFix"></image>
+    <view class='desc'>
+      <view class='one1'>女神靓丽肌肤SPA</view>
+      <view class='one2'>优惠活动 | 新人</view>
+      <view class='one3'>
+        <text>￥588</text>
+        <text>124556人参与</text>
+        <view class='right1'>
+          <image src='https://store.ineerg.com/static/mini/images/appointment/l.png'></image>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>

@@ -1,0 +1,23 @@
+<view style='width:750rpx;overflow-x:hidden'>
+<view class='content'>
+  <radio-group class="radio-group" bindchange="radioChange"> 
+    <label class="radio">
+      <view class='aa'>
+        <text>到店咨询</text>
+        <radio data-val='0' bindtap='daodian' color="#5ab17c" value="0" />
+      </view>
+    </label>
+    <block wx:for="{{series}}" wx:key="" wx:for-index="i">
+      <label  class="radio" bindtap='xiala' data-num='{{i}}'>
+        <view class='aa'>
+          <text>{{item.name}}</text>
+          <image src='https://store.ineerg.com/static/mini/images/xiangxia.png'></image>
+        </view>
+      </label>
+      <block wx:for="{{item.items}}" wx:for-item="v" wx:key="">
+        <view bindtap='selectG' data-price='{{v.price}}' data-Xname='{{item.name}}' data-Gname='{{v.name}}' data-id='{{v.id}}' class="proType{{navindex==i? ' adddis':''}}">{{v.name}}<text style='font-size:24rpx;color:#808080;margin-right:40rpx' data-price='{{v.price}}' data-Xname='{{item.name}}' data-Gname='{{v.name}}' data-id='{{v.id}}'>(￥{{v.price}})</text></view>
+      </block>
+    </block>
+  </radio-group>
+</view>
+</view>

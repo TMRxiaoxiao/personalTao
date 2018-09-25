@@ -1,0 +1,31 @@
+<!-- 清洁Banner -->
+<view class='clean_banner'>
+<image src='https://store.ineerg.com/static/mini/images/xilie/cleanBan.jpg'></image>
+  <view class='wenzi'>
+    <text>{{name}}</text>
+    <!-- <text>一种护肤方式</text> -->
+    <text>量肤定制 健康自然</text>
+  </view>
+</view>
+<!-- 列表 -->
+<view class='content'>
+
+  <view class='list' wx:for="{{datalist}}" wx:key="" wx:for-item="dataitem" wx:if="{{dataitem.promotype==''}}"> 
+    <view class='img_box'><image src='https://store.ineerg.com{{dataitem.thumb}}'></image></view>
+    <view class='bottom_box'>
+      <view class='title'>{{dataitem.name}}</view>
+      <view class='title_desc'>
+        <view class='time_logo'><image src='https://store.ineerg.com/static/mini/images/xilie/pic1 (3).png'></image></view>
+        <text>{{dataitem.los}}分钟</text>
+        <view class='time_logo'><image src='https://store.ineerg.com/static/mini/images/xilie/pic1 (1).png'></image></view>
+        <text>{{dataitem.priod}}</text>
+        <view class='time_logo'><image src='https://store.ineerg.com/static/mini/images/xilie/pic1 (2).png'></image></view>
+        <text>{{dataitem.scount}}人已经体验</text>
+      </view>
+      <navigator url='/saleListContent/saleListContent?id={{dataitem.id}}' class='more_but'>查看详情</navigator>
+    </view>
+  </view>
+</view>
+
+
+

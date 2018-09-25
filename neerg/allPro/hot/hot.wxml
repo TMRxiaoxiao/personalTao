@@ -1,0 +1,31 @@
+<!--allPro/hot/hot.wxml-->
+<view class="content">
+  <view class="left">
+    <block wx:for="{{note}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+    </block>
+  </view>
+  <view class="right">
+    <block wx:for="{{note}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+    </block>
+  </view>
+</view>
+
+<!--  下面是一个模块 -->
+<template name="item">
+  <navigator url='/saleListContent/saleListContent?id={{id}}&promotype={{promotype}}&shopid=0' class="item">
+    <image class="item-img" src="https://store.ineerg.com{{thumb}}" mode="widthFix"></image>
+    <view class='desc'>
+      <view class='one1'>{{name}}</view>
+      <view class='one2'wx:if="{{promotype!=''}}">优惠活动 | {{promotype}}</view>
+      <view class='one3'>
+        <text>￥{{price}}</text>
+        <text>{{scount}}人参与</text>
+        <view class='right1'>
+          <image src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>

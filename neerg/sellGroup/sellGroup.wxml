@@ -1,0 +1,92 @@
+<!--sellGroup/sellGroup.wxml-->
+<view class="banner">
+    <image mode='widthFix' src='https://store.ineerg.com{{groupIntro.thumb}}'></image>
+</view>
+<view class="main1">
+    <view class="intro">
+        <view class="main">
+            <text>{{groupIntro.title}}</text>
+            <text>
+                {{groupIntro.subtitle}}
+            </text>
+            <view class="priceBox">
+                <view>
+                  <text>拼团价：</text> 
+                  <text>￥</text>
+                  <text>{{units[idIndex].price}}</text>
+                  <text>定价：</text>
+                  <text>￥{{groupIntro.orprice}}</text>
+                </view>
+                <text>{{units[idIndex].people}}人团</text>
+            </view>
+        </view>
+    </view>
+    <view class="groupList">
+        <scroll-view scroll-x class="tab-h">
+            <block wx:for="{{groupIntro.units}}" wx:key wx:for-item="v" wx:for-index="idx">
+              <view class="tab-item{{idIndex==idx? ' bac':''}}" data-index='{{idx}}' bindtap='clickIndex'>
+                <image mode="widthFix" src="https://store.ineerg.com/static/mini/images/pic_img11.png" alt=""/>
+                <text>{{v.people}}人团</text>
+                <view class="price">
+                    <text>￥</text>
+                    <text>{{v.price}}</text>
+                </view>
+              </view>
+            </block>
+            <view style="clear: both"></view>
+        </scroll-view>
+    </view>
+    <view class="shiyongMall">
+        <image mode='widthFix' src="https://store.ineerg.com/static/mini/images/dingwei.png"></image>
+        <text>适用门店：</text>
+        <block wx:for="{{groupIntro.joinshop}}" wx:key wx:for-item="value">
+          <text>{{value.shortname}}</text>
+        </block>
+    </view>
+    <view class="sellHd">
+        <view class="huodongIntro">
+            <text>拼团说明</text>
+            <text>
+                有效时间：{{timeOver}} <br/>
+                效果功效：{{groupIntro.intro}}
+            </text>
+        </view>
+    </view>
+    <view class="sellList" wx:if="{{groupIntro.teams.length!=0}}">
+        <view class="first">
+            <view>
+                <text>{{groupIntro.teams.length}}</text>
+                <text>个团正在进行中，可直接参与</text>
+            </view>
+            <view>
+                <text>更多></text>
+            </view>
+        </view>
+        <view class="second">
+            <block wx:for="{{groupIntro.teams}}" wx:key wx:for-item="vi" wx:for-index="indexA">
+              <view class="group">
+                <view>
+                    <image mode='widthFix' src="{{vi.avatar}}"></image>
+                    <text>{{vi.name}}</text>
+                    <text>|</text>
+                    <text>{{vi.people.people}}人团</text>
+                </view>
+                <view>
+                    <view>
+                        <text>还差</text><text>{{vi.people.people-vi.groupnumber}}人</text>
+                    </view>
+                    <view><text>剩余</text><text>{{wearList[indexA].difftime}}</text></view>
+                </view>
+                <view bindtap='joinGroup' data-teamid='{{vi.Id}}' data-price="{{vi.people.price}}">参团</view>
+              </view>
+            </block>
+        </view>
+    </view>
+    <view class="richText">
+        <rich-text nodes="{{richtext}}"></rich-text>
+    </view>
+    <view class="buyBtn">
+        <view bindtap='payBuy'>{{groupIntro.orprice}}土豪直接买</view>
+        <view bindtap='pay_buy'>{{units[idIndex].price}}开团购买</view>
+    </view>
+</view>

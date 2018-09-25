@@ -1,0 +1,256 @@
+/* pages/mall/mall.wxss */
+/* allPro/pro_list/pro_list.wxss */
+.content{
+  margin: 0 27rpx;
+  text-align: justify;
+  margin-top: 20rpx 
+}  
+.item{
+  background-color: #fff;
+  margin: 1%; 
+  margin-bottom: 20rpx;
+  display: inline-block;
+  width: 100%;
+  height: auto
+}
+.item-ava{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+}
+.heart{
+  width: 30rpx;
+  height: 26rpx;
+  margin-right: 8rpx;
+}
+.heart_{
+  display: flex;
+  align-items: center;
+}
+.item-img{
+  width: 100%
+}
+.item-title{
+  font-size: 24rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-family: 'PingFang SC-Medium';
+  color: #1e1e1e;
+  margin: 15rpx;
+  line-height: 27rpx;
+}
+.item .name{
+  display: flex;
+  padding: 0 15rpx;
+  margin-top: 20rpx;
+  padding-bottom: 10rpx;
+  align-items: center;
+  font-size: 22rpx;
+  color: #1e1e1e;
+  font-family: 'PingFang SC-Medium';
+}
+.name image{
+  flex: 0 0 30rpx;
+}
+.item-title-box{
+  display: flex;
+  position: relative;
+}
+.name-title{
+  flex: 1;
+  margin-left: 18rpx;
+  margin-right: 20rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.name text:last-child{
+  flex: 0 0 30rpx;
+  color: #c4c4c4;
+  text-decoration: underline;
+  line-height: 10rpx;
+  
+}
+.left,.right{
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+.right{
+  float: right;
+}
+.desc{
+  width: 100%;
+  height: 138rpx;
+  background: #f8f8f8; 
+  margin-top: -8rpx;
+  padding: 20rpx 0rpx 22rpx 0rpx
+}
+.desc .one1{
+  color: #333333;
+  font-size: 20rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx
+}
+.desc .one2{
+  width: 128rpx;
+  border-radius: 10rpx;
+  color: #ea3339;
+  font-size: 18rpx;
+  padding: 4px;
+  border: 1px solid #ea3339;
+  margin-top: 16rpx;
+  margin-left: 20rpx;
+  text-align: center
+}
+.desc .one3 text:nth-child(1){
+  color: #ea3339;
+  font-size: 18rpx;
+  margin-top: 18rpx;
+  margin-left: 20rpx
+}
+.desc .one3 text:nth-child(2){
+  color: #666666;
+  font-size: 16rpx;
+  margin-top: 18rpx;
+  margin-left: 20rpx
+}
+.right1{
+  width: 12rpx;
+  height: 18rpx;
+  float: right;
+  margin-right: 20rpx
+}
+.right1 image{
+  width: 100%;
+  height: 100%
+}
+.nav_box{
+  width: 750rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 10rpx;
+  box-shadow:0px 6px 22px #d7d7d7;
+}
+.xiala_box{
+  width: 170rpx;
+  height: 80rpx;
+  margin: 0rpx auto;
+  position: relative
+}
+.xiala_box image{
+  width: 30rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto
+
+}
+.list_xilie{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: calc(100vw - 54rpx);
+  margin: 8rpx auto;
+}
+.list_every{
+  width: 188rpx;
+  height: 56rpx;
+  margin-top: 27rpx;
+  border-radius: 24rpx;
+  line-height: 48rpx;
+  color: #000;
+  text-align: center
+}
+.colors{
+  background: #46cc8d;
+  color: #fff
+}
+.list_every:nth-child(1),.list_every:nth-child(2),.list_every:nth-child(3){
+  margin-top: 0
+}
+.list_every image{
+  width: 28rpx;
+  vertical-align: middle;
+  margin-left: 34rpx;
+  display: none
+}
+.list_every text{
+  font-size: 22rpx;
+  margin-left: 6rpx;
+}
+.back{
+  height: 0;
+  transition: all 1.8s
+}
+.show_nav{
+  width: 750rpx;
+  height: 170rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: block;
+  box-shadow:0px 6px 22px #d7d7d7;
+}
+.all_p{
+  margin: 20rpx auto;
+}
+.aa{
+  display: none
+}
+
+.addbox{
+  width: 750rpx;
+  height: 170rpx
+}
+.hengboi{
+  width: 750rpx;
+}
+.backTop{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1px solid #f8f8f8;
+  box-shadow: 0px 6px 22px #d7d7d7;
+  position: fixed;
+  bottom: 200rpx;
+  right: 50rpx;
+  font-size: 20rpx;
+  color: #8D8B8C;
+  background: #fff;
+  display: none
+}
+.backTop image{
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15rpx;
+  margin-left: auto;
+  margin-right: auto
+}
+.backTop text{
+  display: block;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34rpx;
+  margin-left: auto;
+  margin-right: auto
+}
+.shows{
+  display: block
+}

@@ -1,0 +1,165 @@
+<!--activeBuy/activeBuy.wxml-->
+<view style='width:750rpx;overflow:hidden'>
+  <import src="/wxParse/wxParse.wxml" />
+
+  <view class='ptLogo' wx:if="{{detailed.promo.type==3}}" style='background:#a2d063'>拼团</view>
+  <view class='ptLogo' wx:elif="{{detailed.promo.type==2}}" style='background:#f36541'>秒杀</view>
+  <view class='ptLogo' wx:elif="{{detailed.promo.type==1}}" style='background:#fec463'>特卖</view>
+
+ 
+  <view class='logo_time'>
+    <!-- <image src='https://store.ineerg.com/static/mini/images/clock.png'></image> -->
+  </view>
+  <view class='time_over'>{{clock}}</view>
+  <view class='fanye'>
+    <text>{{curr}}/</text>
+    <text>{{totalNum}}</text>
+  </view>
+
+  <swiper bindchange='change' class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{detailed.photoimgs}}" wx:key="{{index}}">
+      <swiper-item>
+        <image mode='widthFix' src="https://store.ineerg.com{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='price_box'>
+    <view class='first'>
+      <text>{{detailed.name}}</text>
+      <view class='pir' wx:if="{{detailed.promo!=null}}">
+        <text>￥</text>
+        <text>{{detailed.promo.disprice}}</text>
+      </view>
+      <view class='pir' wx:else>
+        <text>￥</text>
+        <text>{{detailed.price}}</text>
+      </view>
+    </view>
+    <view class='second'>
+      <text>{{detailed.intro}}</text>
+      <text class='before_peice' wx:if="{{detailed.promo!=null}}">
+      <text>门市价：</text>
+      <text>￥{{detailed.promo.orprice}}</text>
+      </text>
+      <text class='before_peice' style='display:none' wx:else>
+      </text>
+    </view>
+  </view>
+  <view class='mark_box'>
+    <view class='mark_con'>
+      <view class='everyOne'>
+        <image src='https://store.ineerg.com/static/mini/images/times.png'></image>
+        <text>{{detailed.los}}分钟</text>
+      </view>
+      <view class='everyOne'>
+        <image src='https://store.ineerg.com/static/mini/images/date.png'></image>
+        <text>{{detailed.priod}}</text>
+      </view>
+      <view class='everyOne'>
+        <image src='https://store.ineerg.com/static/mini/images/face.png'></image>
+        <text>{{detailed.scount}}人已体验</text>
+      </view>
+    </view>
+  </view>
+  <!-- 活动详情 -->
+  <view class='gmxz' wx:if="{{detailed.intro!=''}}">活动详情</view>
+  <view class='gmCon'>
+    <view class='main'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      <text></text>
+    </view>
+  </view>
+
+
+  <!-- 已开团pin  -->
+  <view class='gmxz' wx:if="{{detailed.promo.type==3 && pingtuan.length !== 0}}">已开团品</view>
+  <view class='list_tp' wx:if="{{detailed.promo.type==3}}" wx:for="{{pingtuan}}" wx:key="" wx:for-item="ptitem" wx:for-index="op">
+    <view class='bodyImg'>
+      <image src='{{ptitem.member.avatar}}'></image>
+    </view>
+    <view class='centerBox'> 
+      <view class='num1'>
+        <text>{{ptitem.member.name}}</text>
+        <text>还差 <text>{{detailed.promo.people-ptitem.groupnumber}}</text> 人成团</text>
+      </view>
+      <view class='num2'>
+        <image src='https://store.ineerg.com/static/mini/images/clock1.png'></image>
+        <text>{{yxsjlsit[op].day}}天 {{yxsjlsit[op].hou}} 小时 {{yxsjlsit[op].min}} 分{{yxsjlsit[op].sec}}.{{yxsjlsit[op].micro_sec}}秒结束</text>
+      </view>
+    </view>
+    <view class='ct_button1' id='{{ptitem.Id}}' bindtap='Group'>参团</view>
+  </view>
+
+
+  <view class='gmxz' wx:if="{{Evaluation!=null}}">全部点评</view>
+  <view class='comment11' wx:if="{{Evaluation!=null}}">
+    <view class='comment'>
+      <block wx:for="{{Evaluation}}" wx:key="" wx:for-item="Evaluationitem">
+        <view class='comment_list'>
+          <view class='photo_img_body'>
+            <image src='{{Evaluationitem.member.avatar}}'></image>
+          </view>
+          <view class='right_name_desc'>
+            <view class='namebox'>{{Evaluationitem.member.name}}</view>
+            <view class='descbox'>{{Evaluationitem.memo}}</view>
+            <view class='before_time'>{{Evaluationitem.time}}</view>
+            <view class='tupian' wx:if="{{Evaluationitem.photos}}">
+              <block wx:for="{{Evaluationitem.photos}}" wx:key="">
+                <view class='tupian_one'>
+                  <image src='{{item}}'></image>
+                </view>
+              </block>
+
+            </view>
+            <view class='mall_res' wx:if="{{Evaluationitem.reply!=''}}">
+              商家回复：{{Evaluationitem.reply}}
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 推荐项目 -->
+  <view class='gmxz'>推荐项目</view>
+  <swiper class='tjxm_swiper'>
+    <navigator wx:for="{{recommendlist}}" wx:for-index="listindex" id="{{listindex}}" wx:for-item="listitem" wx:key="" wx:if="{{listindex<2}}" url='/saleListContent/saleListContent?id={{listitem.id}}&shopid={{listitem.shopid}}&promotype={{listitem.promotype}}'>
+      <swiper-item style="width:470rpx;height:100%">
+        <image src="https://store.ineerg.com/{{listitem.thumb}}" class="slide-image" width="355" height="150" />
+        <view class='title_desc'>
+          <text class='diyi' style='margin-left:16rpx;margin-top:27rpx' wx:if="{{listitem.promotype!==null&&listitem.promotype==='拼团'}}">拼团</text>
+          <text class='diyi' style='margin-left:16rpx;margin-top:27rpx' wx:if="{{listitem.promotype!==null&&listitem.promotype==='特卖'}}">特卖</text>
+          <text class='diyi' style='margin-left:16rpx;margin-top:27rpx' wx:if="{{listitem.promotype!==null&&listitem.promotype==='秒杀'}}">秒杀</text>
+
+          <text class='dier'>{{listitem.name}}</text>
+          <text class='disan'>￥{{listitem.price}}</text>
+        </view>
+      </swiper-item>
+    </navigator>
+  </swiper>
+  <navigator url='/saleListContent/saleListContent?id={{dataitem.id}}&shopid={{dataitem.shopid}}&promotype={{dataitem.promotype}}' class='tj_ct' wx:for="{{recommendlist}}" wx:for-index="dataindex" wx:for-item="dataitem" wx:key="" wx:if="{{dataindex>2}}">
+    <view class='suolue_img'>
+      <image src='https://store.ineerg.com/{{dataitem.thumb}}'></image>
+    </view>
+    <view class='center_box'>
+      <text class='diyi' style="background:#f36541" wx:if="{dataitem.promotype=='拼团'}}">拼团</text>
+      <text class='diyi' style="background:#fec463" wx:if="{{dataitem.promotype=='特卖'}}">特卖</text>
+      <text class='diyi' style="background:#a2d063" wx:if="{{dataitem.promotype=='秒杀'}}">秒杀</text>
+      <text>{{dataitem.name}}</text>
+      <text>{{dataitem.intro}}</text>
+    </view>
+    <view class='right_price'>
+      <text wx:if="{{dataitem.promotype!==null}}">￥{{dataitem.price}}</text>
+      <text wx:if="{{dataitem.promotype!==null}}">￥{{dataitem.oprice}}</text>
+    </view>
+  </navigator>
+  <!-- 抢购按钮固定 -->
+  <view style='width:750rpx;height: 230rpx;'></view>
+  <view class='cover_box'>
+    <!--<navigator url="/orders/orderPay/orderPay" class='btn_box'>马上抢购</navigator>-->
+    <button wx:if="{{detailed.promo.type==3}}" class="{{detailed.promo.type==3?'btn_box1':'btn_box'}}" bindtap='buy'>马上开团</button>
+    <button plain="true" wx:if="{{detailed.promo.type==3}}" class='Yprice' bindtap="buyPrice">原价购买</button>
+    <button wx:if="{{detailed.promo.type==2}}" class='btn_box' bindtap='buy'>马上抢购</button>
+    <button wx:if="{{detailed.promo.type==1}}" class='btn_box' bindtap='buy'>马上抢购</button>
+    <button wx:if="{{!detailed.promo.type}}" class='btn_box' bindtap='buy'>马上购买</button>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">get</button>
+
+<map id="map" longitude="116.715790" latitude="23.362490" markers="{{markers}}"
+scale="18"  style="width: 100%; height: 300px;" bindtap="click">
+</map>
+

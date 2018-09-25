@@ -1,0 +1,86 @@
+<view class='baoqi'>
+  <view class="banner_box">
+    <image wx:if="{{shopdata!==null}}" src='https://store.ineerg.com{{shopdata.logo}}'></image>
+    <image wx:if="{{shopdata==null}}" src='https://store.ineerg.com/uploads/img/2018/0613/093834374.jpg'></image>
+    <!-- <image src='https://store.ineerg.com/static/mini/images/appointment/cover.png'></image> -->
+    <view class='storeNme'>
+      <text style='text-shadow:1px 1px 2px #000;' wx:if="{{shopdata!==null}}">{{shopdata.fullname}}</text>
+      <text style='text-shadow:1px 1px 2px #000;' wx:if="{{shopdata==null}}">请选择门店</text>
+      <navigator url="/storeList/storeList" class='change_button'>
+        <view class='add_logo'>
+          <image src='https://store.ineerg.com/static/mini/images/appointment/address.png'></image>
+        </view>
+        <text class='changeText'>更换</text>
+      </navigator>
+    </view>
+  </view>
+  <view class='content'>
+    <form bindsubmit='yuyue' report-submit='{{true}}'>
+      <navigator hover-class='none' url='/pages/appoinManage/appoinManage?shopid={{shopdata.shopid}}' class='list_appoin'>
+      <view class='yyxm'>预约项目</view>
+      <view class='guanli'>
+        <text wx:if="{{val==1}}">到店咨询</text>
+        <block wx:if="{{val!==1}}">
+          <text>{{xmdata.dataset.gname==null?"请选择项目":xmdata.dataset.gname}}</text>
+          <text>￥{{xmdata.dataset.price==null?0:xmdata.dataset.price}}</text>
+        </block>
+      </view>
+      <view class='jt'>
+        <image src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+      </view>
+    </navigator>
+    <!-- <navigator hover-class='none' url='/pages/appoinDate/appoinDate?shopid={{shopdata.shopid}}' class='list_appoin'>  -->
+    <view bindtap='showTimeModel' class='list_appoin'>
+      <view class='yyxm'>日期</view>
+      <view class='guanli'>
+        <text>{{datatime}}</text>
+      </view>
+      <view class='jt'>
+        <image src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+      </view>
+    </view>
+    <!-- </navigator>  -->
+    <view class="list_appoin {{beizhu1==true? '':' beizhu'}}">
+      <view class='yyxm'>备注</view>
+      <textarea class='textarea1' cursor="0" placeholder-class="sty" class='input' placeholder='说点什么呀~' type='text' bindinput='beizhu' value='{{beizhu}}'></textarea>
+    </view>
+
+    <view class='bottomCover'>
+      <button form-type='submit' class='buton'>预约</button>
+    </view>
+    </form>
+  </view>
+
+  <!-- 预约日期 -->
+  <!-- modal 自定义日期弹出框-->
+  <!-- <button class='showBtn' bindtap='showTimeModel'>弹出timeModel</button> -->
+  <view class="modal {{timeShow?'modal_show':'modal_hide'}}">
+    <!-- 点击弹出框外部取消 -->
+    <view bindtap='cancel' class='modal_cancel'></view>
+
+    <!-- 弹出框主体 -->
+    <view class='modal_container'>
+      <!-- header -->
+      <view class='modal_header'>
+        <view>预定时间</view>
+        <view class='header_tip'>一周内的预订</view>
+        <view bindtap='modelCancel' class='done'>确定</view>
+        <view bindtap='cancel' class='cancel'>取消</view>
+      </view>
+      <!-- 日期 -->
+      <view class="time">
+        <scroll-view class="time_scroll" scroll-x="true" style="width: 100%">
+          <view data-index="{{index}}" bindtap="timeClick" class="scroll_item {{currentTab==index?'time_active':''}}" wx:for="{{timeList}}" wx:key="{{index}}">
+            <view style="height:25px;line-height:25px">{{item.name}}</view>
+            <view style="height:25px;line-height:25px">{{item.date}}</view>
+          </view>
+        </scroll-view>
+      </view>
+      <!-- 小时 -->
+      <view class='hour'>
+        <view bindtap="hourClick" class="hour_item {{item.isShow?'':' hour_unactive'}} {{hourIndex==index?' hour_active':''}} " wx:for="{{hourList}}" wx:key="{{index}}" data-berthid="{{item.berthid}}" data-index="{{index}}" data-isshow="{{item.isShow}}">{{item.hour}}</view>
+        <view style='clear:both'></view>
+      </view>
+    </view>
+  </view>
+</view>

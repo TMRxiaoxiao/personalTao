@@ -1,0 +1,135 @@
+/* orders/cardPay/cardPay.wxss */
+.list{
+	width: calc( 100vw - 54rpx);
+	padding: 0 34rpx 47rpx;
+	border-radius: 5rpx;
+	box-sizing: border-box;
+	box-shadow: 0px 6px 22px #d7d7d7;
+	margin: 0 auto 68rpx;
+	overflow: hidden;
+}
+.list .time_state{
+	width: 100%;
+	height: 55px;
+	line-height: 60px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	border-bottom: solid 1rpx #ddd;
+}
+.list .time_state .time,
+.list .time_state .state{
+	flex: 1;
+	color: #333;
+	font-size: 21rpx;
+}
+.list .time_state .time{text-align: left}
+.list .time_state .state{text-align: right}
+.list .details{
+	width: 100%;
+	padding: 52rpx 0;
+	overflow: hidden;
+	box-sizing: border-box;
+	border-bottom: solid 1rpx #ddd;
+}
+.list .details image{
+	float: left;
+	width: 223rpx;
+	height: 133rpx;
+	border-radius: 5rpx;
+}
+.list .details .right{
+	float: right;
+	width: 364rpx;
+	color: #333;
+	font-size: 25rpx;
+	line-height: 1;
+	font-weight: bold;
+	text-align: right;
+}
+.list .details .right .title{
+	float: left;
+	height: 89rpx;
+	font-size: 25rpx;
+	text-align: left;
+  width: 244rpx
+}
+.list .details .right .price{
+	float: right;
+}
+.list .details .right .number{
+	float: right;
+	width: 100%;
+}
+.list .real_payment{
+	width: 100%;
+	color: #333;
+	font-size: 25rpx;
+	line-height: 1;
+	text-align: right;
+	font-weight: bold;
+	padding: 25rpx 0 45rpx;
+}
+.list .real_payment text{
+	color: #ff2d2d;
+}
+.list .btn{
+	display: flex;
+	justify-content: flex-end;
+}
+.list .btn .delete,
+.list .btn .evaluation{
+	float: right;
+	color: #333;
+	font-size: 25rpx;
+	width: 172rpx;
+	height: 69rpx;
+	line-height: 67rpx;
+	text-align: center;
+	border-radius: 69rpx;
+	border: solid 1rpx #333;
+	margin-left: 20rpx;
+}
+.content{
+  padding-top: 50rpx
+}
+.fixed_btn{
+  width: 750rpx;
+  height: 124rpx;
+  border-top: 1px solid #dddddd;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.pay_box{
+  height: 30rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25rpx;
+  color: #333333
+}
+.pay_box text:nth-child(2){
+  color: #ff2d2d
+}
+.pay_btn{
+  width: 278rpx;
+  height: 83rpx;
+  background: #46cc8c;
+  border-radius: 40rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 21rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 83rpx;
+  text-align: center
+}

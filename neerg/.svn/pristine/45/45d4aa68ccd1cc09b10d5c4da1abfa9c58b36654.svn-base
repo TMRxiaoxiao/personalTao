@@ -1,0 +1,12 @@
+<!--setMessage/setMessage.wxml-->
+<view class='changeCall'>
+  <view class='newCall'>输入新的手机号</view>
+  <view class='call'>
+    <input type='number' bindinput='phone' placeholder-class='cal' placeholder='请输入手机号码'></input>
+  </view>
+  <view class='call'>
+    <input type='number' bindinput='vcode' placeholder-class='cal' placeholder='请输入验证码'></input>
+    <button data-id="2" disabled='{{disabled}}' bindtap='send' class='sub'>{{time}}</button>
+  </view>
+  <view bindtap='submit' class="sub1 {{phone.length==11&&vcode.length==6? ' aci':''}}">提交</view>
+</view>

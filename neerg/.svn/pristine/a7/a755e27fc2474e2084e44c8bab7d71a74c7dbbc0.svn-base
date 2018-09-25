@@ -1,0 +1,35 @@
+<!--saleList/saleList.wxml-->
+<view class='saleList_box'>
+  <view class='img_sale'>
+    <image src='https://store.ineerg.com/static/mini/images/saleList.png'></image>
+    <view class='ptLogo'>拼团</view>
+    <view class='logo_time'><image src='https://store.ineerg.com/static/mini/images/clock.png'></image></view>
+    <view class='time_over'>{{clock}}</view>
+  </view>
+  <view class='pt_desc'>
+    <text>晒后紧急修复管理</text>
+    <text>这里是个活动的项目介绍文字asda</text>
+    <view class='price'>
+      <text>￥</text>
+      <text>280</text>
+    </view>
+    <view class='join_button'>马上参团</view>
+  </view>
+</view>
+<view class='saleList_box'>
+  <view class='img_sale'>
+    <image src='https://store.ineerg.com/static/mini/images/saleList.png'></image>
+    <view class='ptLogo'>拼团</view>
+    <view class='logo_time'><image src='https://store.ineerg.com/static/mini/images/clock.png'></image></view>
+    <view class='time_over'>{{total1}}</view>
+  </view>
+  <view class='pt_desc'>
+    <text>晒后紧急修复管理</text>
+    <text>这里是个活动的项目介绍文字asda</text>
+    <view class='price'>
+      <text>￥</text>
+      <text>280</text>
+    </view>
+    <view class='join_button'>马上参团</view>
+  </view>
+</view>

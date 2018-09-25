@@ -1,0 +1,167 @@
+/* Gxiangka/Gxiangka.wxss */
+.top_nav{
+  width: 460rpx;
+  height: 102rpx;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #808080;
+  font-weight: bold
+}
+.heng{
+  width: 750rpx;
+  height: 1px;
+  background: #dbdbdb;
+  position: fixed;
+  top: 103rpx;
+  left: 0
+}
+.nav_one{
+  font-size: 26rpx;
+  line-height: 102rpx;
+  text-align: center;
+  box-sizing: border-box;
+  height: 86rpx
+}
+.border{
+  border-bottom: 6rpx solid #46cc8c;
+  color: #46cc8c;
+}
+.ds{
+  display: none;
+}
+.show{
+  display: block
+}
+.content{
+  width: calc(100vw - 54rpx);
+  height: auto;
+  margin: 20rpx auto;
+}
+.list_one{
+  width: 100%;
+  height: 328rpx;
+  margin-top: 28rpx;
+  border-radius: 20rpx;
+  position: relative;
+  overflow: hidden;
+  box-shadow:0px 6px 22px #d7d7d7;
+}
+.list_one:nth-child(1){
+  margin-top: 37rpx;
+}
+.list_one image{
+  position: absolutel;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.list_one text:nth-child(2){
+  display: block;
+  position: absolute;
+  bottom: 64rpx;
+  left: 282rpx;
+  font-size: 20rpx;
+  font-weight: 700
+}
+.list_one text:nth-child(3){
+  display: block;
+  position: absolute;
+  bottom: 38rpx;
+  left: 282rpx;
+  font-size: 20rpx;
+  font-weight: 700
+}
+.list_one text:nth-child(4){
+  display: block;
+  position: absolute;
+  top: 32rpx;
+  right: 40rpx;
+  font-size: 31rpx;
+  font-weight: bold;
+  color: #fff
+}
+/* 我的G享卡 */
+.input_box{
+  width: 100%;
+  height: 64rpx;
+  margin-top: 51rpx;
+}
+.input{
+  float: left;
+  border-bottom: 1px solid #888888;
+  padding-left: 14rpx;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  width: 354rpx
+}
+.get_button{
+  float: right
+}
+.place{
+  font-size: 20rpx;
+}
+.get_button{
+  width: 166rpx;
+  height: 64rpx;
+  background: #46cc8c;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 64rpx;
+  color: #fff;
+  margin-right: 20rpx
+}
+.myCard{
+  font-size: 24rpx;
+  color: #000;
+  margin-top: 85rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+  transition:  all 0.5s
+}
+.coverBox{
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+  left: 0;
+  top: 0
+}
+.kac{
+  filter:grayscale(1);
+  opacity:.5;
+}
+.buyCard{
+  width: 100%;
+  height: 318rpx;
+  margin: 29rpx auto
+}
+.buyCard > image{
+  width: 100%;
+  height: 100%
+}
+.zanwushuju{
+  width: 400rpx;
+  height: 580rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0rpx;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+  opacity: 0.7
+}
+.zanwushuju image{
+  width: 100%;
+  height: 100%
+}

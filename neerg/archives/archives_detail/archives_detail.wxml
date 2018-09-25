@@ -1,0 +1,130 @@
+<!--pages/archives_detail/archives_detail.wxml-->
+<view class='box'>
+    <view class='detail_top'>
+      <image class='back' src='https://store.ineerg.com/static/img/skinbg.jpg'></image>
+      <view class='date'>
+        {{datalist.checkdate}}
+      </view>
+      <view class='title'>
+        <view>
+        档案详情
+        </view>
+        <view>
+          <view>
+          {{datalist.total}}
+          </view>
+          <view>
+            分
+          </view>
+        </view>
+      </view>
+
+      <view class='chart' style=''>
+        <canvas canvas-id='radarCanvas' style='width:350px;height:350px;margin:0px auto 0;' bindtouchstart="touchHandler"></canvas>
+      </view>
+    </view>
+    <view class='skin_things'>
+      <view class='skin_title'>
+        肌肤状况
+      </view>
+      <view class='skin_des'>
+        <view>
+          皮肤类型：{{datalist.fuzhi}}
+        </view>
+        <view>
+        备注：{{datalist.fuzhimemo}}
+        </view>
+      </view>
+      <!--水分-->
+      <view class='skin_list'>
+        <view class='left'>
+          <image src='https://store.ineerg.com/static/img/skin_1.png'></image>
+        </view>
+        <view class='right'>
+          <view>水分</view>
+          <view>备注：{{datalist.shuifenmemo}}</view>
+        </view>
+      </view>
+      <!--皮脂-->
+      <view class='skin_list'>
+        <view class='left'>
+          <image src='https://store.ineerg.com/static/img/skin_5.png'></image>
+        </view>
+        <view class='right'>
+          <view>皮脂</view>
+          <view>备注：{{datalist.youzhimemo}}</view>
+        </view>
+      </view>
+      <!--皱纹-->
+      <view class='skin_list'>
+        <view class='left'>
+          <image src='https://store.ineerg.com/static/img/skin_6.png'></image>
+        </view>
+        <view class='right'>
+          <view>皱纹</view>
+          <view>备注：{{datalist.zhouwenmemo}}</view>
+        </view>
+      </view>
+      <!--毛孔-->
+      <view class='skin_list'>
+        <view class='left'>
+          <image src='https://store.ineerg.com/static/img/skin_2.png'></image>
+        </view>
+        <view class='right'>
+          <view>毛孔</view>
+          <view>备注：{{datalist.maokongmemo}}</view>
+        </view>
+      </view>
+      <!--色素/色斑-->
+      <view class='skin_list'>
+        <view class='left'>
+          <image src='https://store.ineerg.com/static/img/skin_3.png'></image>
+        </view>
+        <view class='right'>
+          <view>色素/色斑</view>
+          <view>备注：{{datalist.sesumemo}}</view>
+        </view>
+      </view>
+      <!--角质-->
+      <view class='skin_list'>
+        <view class='left'>
+          <image src='https://store.ineerg.com/static/img/skin_4.png'></image>
+        </view>
+        <view class='right'>
+          <view>角质</view>
+          <view>备注：{{datalist.jiaozhimemo}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='bac'>
+    </view>
+    <!-- 咨询师建议 -->
+    <view class='teacher' wx:if="{{datalist.memo.length!=0}}">
+      <view class='skin_title'>
+        咨询师建议
+      </view>
+      <view class='teacher_box'>
+      <view></view>
+      {{datalist.memo}}</view>
+    </view>
+    <view class='bac'>
+    </view>
+    <!-- 皮肤影像 -->
+    <view class='video'>
+    <view class='skin_title'>
+        皮肤影像
+      </view>
+      <view class='video_box'>
+        <view class='video_left' bindtap='yl' data-id='0'> 
+          <image src='{{datalist.photoss[0]}}'></image>
+        </view>
+        <view class='video_right'>
+          <view bindtap='yl' data-id='1'><image src='{{datalist.photoss[1]}}'></image></view>
+          <view bindtap='yl' data-id='2'>
+            <image  src='{{datalist.photoss[2]}}'></image>
+            <view class='video_right_bottom '>+{{datalist.photoss.length}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>

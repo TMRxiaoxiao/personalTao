@@ -1,0 +1,155 @@
+/*切换菜单*/
+.nav {
+	width: calc( 100vw - 54rpx);
+	height:104rpx;
+	margin: 0 auto;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+}
+.hr{
+	width: 100%;
+	height: 1rpx;
+	overflow: hidden;
+	margin-bottom: 68rpx;
+	background: #ddd;
+}
+.default,
+.default_hover {
+	flex: 1;
+	color:#333;
+	font-size:25rpx;
+	line-height:100rpx;
+	text-align:center;
+	
+}
+.default{
+	border-bottom: solid 5rpx #fff;	
+}
+.default_hover {
+	border-bottom: solid 5rpx #75e9a5;
+}
+/*切换内容*/
+.show {display:block;}
+.hidden {display:none;}
+.list{
+	width: calc( 100vw - 54rpx);
+	padding: 0 34rpx 47rpx;
+	border-radius: 5rpx;
+	box-sizing: border-box;
+	box-shadow: 0px 6px 22px #d7d7d7;
+	margin: 0 auto 50rpx;
+	overflow: hidden;
+}
+.list .time_state{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	border-bottom: solid 1rpx #ddd;
+}
+.list .time_state .time,
+.list .time_state .state{
+	flex: 1;
+	color: #333;
+	font-size: 21rpx;
+}
+.list .time_state .time{text-align: left}
+.list .time_state .state{text-align: right}
+.list .details{
+	width: 100%;
+	padding: 52rpx 0;
+	overflow: hidden;
+	box-sizing: border-box;
+	border-bottom: solid 1rpx #ddd;
+}
+.list .details image{
+	float: left;
+	width: 223rpx;
+	height: 133rpx;
+	border-radius: 5rpx;
+}
+.list .details .right{
+	float: right;
+	width: 370rpx;  
+  /* padding-left: 50rpx; */
+	color: #333;
+	font-size: 25rpx;
+	line-height: 1;
+	font-weight: bold;
+	text-align: right;
+}
+.list .details .right .title{
+	float: left;
+	width: 224rpx;
+	height: 89rpx;
+	font-size: 25rpx;
+	text-align: left;
+}
+.list .details .right .price{
+	float: right;
+}
+.list .details .right .number{
+	float: right;
+	width: 100%;
+}
+.list .real_payment{
+	width: 100%;
+	color: #333;
+	font-size: 25rpx;
+	line-height: 1;
+	text-align: right;
+	font-weight: bold;
+	padding: 25rpx 0 45rpx;
+}
+.list .real_payment text{
+	color: #ff2d2d;
+}
+.list .btn{
+	display: flex;
+	justify-content: flex-end;
+}
+.list .btn .delete,
+.list .btn .evaluation{
+	float: right;
+	color: #333;
+	font-size: 25rpx;
+	width: 172rpx;
+	height: 68rpx;
+	line-height: 67rpx;
+	text-align: center;
+	border-radius: 15rpx;
+	border: solid 1rpx #333;
+	margin-left: 20rpx;
+}
+.loading{
+  font-size: 15px;
+  text-align: center;
+}
+.quanNox{
+  width:calc( 100vw - 54rpx);
+  padding:0 34rpx 47rpx;
+  border-radius:5rpx;
+  box-sizing:border-box;
+  box-shadow:0px 6px 22px #d7d7d7;
+  margin:0 auto 68rpx;
+  overflow:hidden;
+}
+.zanwushuju{
+  width: 400rpx;
+  height: 580rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0rpx;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+  opacity: 0.7
+}
+.zanwushuju image{
+  width: 100%;
+  height: 100%
+}

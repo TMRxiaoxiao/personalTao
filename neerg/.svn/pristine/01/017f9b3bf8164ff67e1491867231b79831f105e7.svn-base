@@ -1,0 +1,11 @@
+<!--pages/test/test.wxml-->
+
+ 
+<view style='margin-top:60px;'>二:显示用户选择的评分</view>
+<block wx:for="{{one_2}}" wx:key="index">
+<image catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='../../images/full-star.png'></image>
+</block>
+<block wx:for="{{two_2}}" wx:key="index">
+<image catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='../../images/no-star.png'></image>
+</block>
+<view>{{one_2}}星</view>

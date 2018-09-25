@@ -1,0 +1,38 @@
+<!--gcourse/comment/comment.wxml-->
+<view class='comment'>
+  <block>
+    <view class='comment_list'>
+      <view class='photo_img_body'>
+        <image src='https://store.ineerg.com/static/mini/images/course/wxtx (3).png'></image>
+      </view>
+      <view class='right_name_desc'>
+        <view class='namebox'>如风</view>
+        <view class='descbox'>说点什么，让更多爱美的伙伴了解变美的过程~</view>
+        <view class='before_time'>19小时之前</view>
+        <view class='mall_res'>
+          商家回应：感谢您的评价，让更多爱美的伙伴了解变美的过程， 作为一个八零后，身体各方面机能都应该已经走下坡路了，不要 不敢面对就是这么残酷！但是一直被问怎么保养皮肤。
+        </view>
+      </view>
+    </view>
+  </block>
+  <block>
+    <view class='comment_list'>
+      <view class='photo_img_body'>
+        <image src='https://store.ineerg.com/static/mini/images/course/wxtx (3).png'></image>
+      </view>
+      <view class='right_name_desc'>
+        <view class='namebox'>如风</view>
+        <view class='descbox'>说点什么，让更多爱美的伙伴了解变美的过程~</view>
+        <view class='before_time'>19小时之前</view>
+        <view class='tupian'>
+          <view class='tupian_one'><image src='https://store.ineerg.com/static/mini/images/course/pltu (3).png'></image></view>
+          <view class='tupian_one'><image src='https://store.ineerg.com/static/mini/images/course/pltu (1).png'></image></view>
+          <view class='tupian_one'><image src='https://store.ineerg.com/static/mini/images/course/pltu (2).png'></image></view>
+        </view>
+        <view class='mall_res'>
+          商家回应：感谢您的评价，让更多爱美的伙伴了解变美的过程， 作为一个八零后，身体各方面机能都应该已经走下坡路了，不要 不敢面对就是这么残酷！但是一直被问怎么保养皮肤。
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

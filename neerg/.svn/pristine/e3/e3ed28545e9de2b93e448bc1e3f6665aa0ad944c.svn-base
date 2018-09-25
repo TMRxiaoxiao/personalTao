@@ -1,0 +1,11 @@
+<!--orders/medal/medal.wxml-->
+<view class='content'>
+  <view class='list_model'>
+    <view class='model_logo'><image src='https://store.ineerg.com/static/mini/images/order/hs.png'></image></view>
+    <view class='get'>已获得</view>
+    <view class='dengji'>
+      等级≥5，至少有3篇日记/帖子被管理员加精或者置顶
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,84 @@
+/* couponMa/couponMa.wxss */
+.quanBan{
+  width: 750rpx;
+  height: 389rpx;
+  position: relative
+}
+.quanBan image{
+  width: 100%;
+  height: 100%;
+  position: relative
+}
+.quanBan text{
+  display: block;
+  
+}
+.quanBan text:nth-child(1){
+  position: absolute;
+  top: 52rpx;
+  left: 57rpx;
+  color: #fff;
+  font-size: 50rpx;
+  font-weight: bold
+}
+.quanBan text:nth-child(2){
+  position: absolute;
+  top: 135rpx;
+  left: 57rpx;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold
+}
+.quanBan text:nth-child(3){
+  position: absolute;
+  top: 186rpx;
+  left: 57rpx;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold
+}
+.neergLogo{
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  bottom: -100rpx;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100
+}
+.neergLogo image{
+  width: 100%;
+  height: 100%;
+}
+.ma1{
+  width: 694rpx;
+  height: 238rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #dddddd;
+  padding-top: 173rpx;
+  position: relative
+}
+.maImg{
+  width: 488rpx;
+  height: 150rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto
+}
+.maImg image{
+  width: 100%;
+  height: 100%;
+}
+.rules{
+  width: 665rpx;
+  height: auto;
+  margin: 65rpx auto;
+  font-size: 20rpx;
+  color: #333333;
+  line-height: 43rpx;
+  padding-left: 29rpx;
+}

@@ -1,0 +1,93 @@
+{
+  "pages": [
+    "pages/index/index",
+    "setMessage/setMessage",
+    "cardDetail/cardDetail",
+    "xingxing/xing",
+    "cantuan/cantuan",
+    "storeList/storeList",
+    "login/login",
+    "storeDetail/storeDetail",
+    "pages/mall/mall",
+    "saleListContent/saleListContent",
+    "orders/coupons/coupons",
+    "archives/archives",
+    "shouquan/shouquan",
+    "myAppointment/myAppointment",
+    "personInfor/personInfor",
+    "gcourse/couse_content/couse_content",
+    "orders/orderPay/orderPay",
+    "shopping/shopping",
+    "gcourse/course_list/course_list",
+    "couponMa/couponMa",
+    "storeReview/storeReview",
+    "orders/order/order",
+    "pages/my/my",
+    "pages/store/store",
+    "gcourse/comment/comment",
+    "saleList/saleList",
+    "freeTest/freeTest",
+    "cardZhuanqu/cardZhuanqu",
+    "Gxiangka/Gxiangka",
+    "city/city",
+    "zhengdangji/zhengdangji",
+    "xilie/clean/clean",
+    "orders/medal/medal",
+    "orders/integral/integral",
+    "gcourse/gclass/gclass",
+    "pages/appointment/appointment",
+    "pages/appoinManage/appoinManage",
+    "pages/appoinPro/appoinPro",
+    "pages/login/login",
+    "allPro/pro_list/pro_list",
+    "allPro/hot/hot",
+    "zhengdanagjiMore/zhengdanagjiMore",
+    "gcourse/gclassContent/gclassContent",
+    "mycard/mycard",
+    "orders/cardPay/cardPay",
+    "cardDetail1/cardDetail1",
+    "activeBuy/activeBuy",
+    "archives/archives_detail/archives_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ecf6ef",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/1.png",
+        "selectedIconPath": "/images/2.png"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "text": "预约",
+        "iconPath": "/images/9.png",
+        "selectedIconPath": "/images/10.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "商城",
+        "iconPath": "/images/7.png",
+        "selectedIconPath": "/images/8.png"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "text": "门店",
+        "iconPath": "/images/5.png",
+        "selectedIconPath": "/images/6.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/3.png",
+        "selectedIconPath": "/images/4.png"
+      }
+    ]
+  }
+}

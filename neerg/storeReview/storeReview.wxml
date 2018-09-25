@@ -1,0 +1,47 @@
+<view style='width:750rpx;overflow-x:hidden'>
+  <!--storeReview/storeReview.wxml-->
+  <view class='store_show'>
+    <view class='first'>
+      <image src='https://store.ineerg.com/static/mini/images/store/storeMal.png'></image>
+      <text>{{shopName}}</text>
+    </view>
+    <view class='second'>{{xmName}}</view>
+  </view>
+
+  <!--评分-->
+  <view class='container'>
+    <view class='evaluate_contant'>
+      <!--外层循环控制有几个评价条目  -->
+      <block wx:for='{{evaluate_contant}}' wx:key='' wx:for-index='idx'>
+        <view class='evaluate_item'>
+          <view class='evaluate_title'>{{item}}</view>
+          <!--星星评价  -->
+          <view class='evaluate_box'>
+            <!--内层循环展示每个评价条目的星星  -->
+            <block wx:for="{{stars}}" wx:key=''>
+              <image class="star-image" style="left: {{item*80}}rpx" src="{{scores[idx] > item ? (scores[idx]-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+                <view class="item" style="left:0rpx" data-score="{{item + 1}}" data-idx='{{idx}}' bindtap="selectRight"></view>
+                <view class="item" style="left:20rpx" data-score="{{item + 1}}" data-idx='{{idx}}' bindtap="selectRight"></view>
+              </image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='review_box'>
+    <textarea placeholder-class='pl' bindinput='msg' placeholder='点赞都是套路，评论才是真情~'></textarea>
+  </view>
+  <view class='updatePhotos1'>
+    <view class='delTex' wx:if="{{hdimglist.length!==0}}">点击图片进行删除</view>
+    <view class='onePhoto' wx:for="{{hdimglist}}" wx:key=""> 
+       <image mode='widthFix' bindtap='delImg' data-i='{{index}}' src='https://store.ineerg.com{{item}}'></image> 
+    </view>
+    <view style='clear:both'></view>
+  </view>
+  <view class='takePhoto'>
+    <image src='https://store.ineerg.com/static/mini/images/store/paizhao.png' bindtap='Uploadimg'></image>
+  </view>
+  <view class='submitAdd'></view>
+  <view class='submit_btn' bindtap='submit_evaluate'>提交评论</view>
+</view>

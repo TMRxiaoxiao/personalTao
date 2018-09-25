@@ -1,0 +1,226 @@
+/* pages/my/my.wxss */
+.top_mess{
+  width: 750rpx;
+  height: 242rpx;
+  position: relative
+}
+.top_mess > image{
+  width: 100%;
+  height: 100%;
+}
+.main_box{
+  width: 440rpx;
+  height: 116rpx;
+  position: absolute;
+  top: 58rpx;
+  left: 62rpx;
+}
+.body_p{
+  width: 116rpx;
+  height: 116rpx;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+.vip{
+  width: 33rpx;
+  height: 33rpx;
+  position: absolute;
+  left: 80rpx;
+  bottom: 0
+}
+.base_mess{
+  position: absolute;
+  left: 140rpx;
+  top: 26rpx;
+}
+.first text:nth-child(1){
+  display: block;
+  float: left;
+  font-size: 28rpx;
+  color:#fff;
+  line-height: 1;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 400rpx
+}
+.nk_card{
+  width: 94rpx;
+  height: 30rpx;
+  float: left;
+  margin-left: 14rpx;
+  position: relative
+}
+.nk_card image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.text_box{
+  width: 100%;
+  height: 100%;
+  font-size: 18rpx;
+  color:#fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  line-height: 28rpx;
+  text-align: center
+}
+.second{
+  margin-top: 10rpx;
+  font-size: 23rpx;
+  color: #fff
+}
+.second > view{
+  float: left;
+  line-height: 1
+}
+.second > view.p2 image{
+  display: block;
+  width: 16rpx;
+  height: 25rpx;
+  margin-left: 6rpx
+}
+.second > view.p3{
+  display: block;
+  margin-left: 28rpx;
+  line-height: 1
+}
+.second > view.p4 image{
+  display: block;
+  width: 22rpx;
+  height: 22rpx;
+  margin-left: 6rpx;
+  margin-right: 4rpx
+}
+.vip_club{
+  width: 627rpx;
+  height: 115rpx;
+  margin: 0 auto;
+  padding-top: 40rpx;
+  position: relative
+  
+}
+.vip_club > text{
+  display: block;
+  font-size: 38rpx;
+  color: #4b4748;
+  font-weight: bold
+}
+.vip_club > view > text:nth-child(1){
+  font-size: 21rpx;
+  color: #000000
+}
+.vip_club > view > text:nth-child(2){
+  font-size: 21rpx;
+  color: #f26170
+}
+.kthy{
+  position: absolute;
+  top: 30rpx;
+  right: 22rpx;
+  font-size: 20rpx;
+  color: #1E1E1E;
+}
+.right_box{
+  width: 11rpx;
+  height: 21rpx;
+  display: inline-block;
+  position: absolute;
+  top: 4rpx;
+  right: -20rpx
+}
+.right_box image{
+  width:100%;
+  height: 100%;
+}
+.kthy > text{
+  line-height: 1
+}
+.four_nav{
+  width: 627rpx;
+  height: 126rpx;
+  margin: 80rpx auto;
+  display: flex;
+  justify-content: space-between
+}
+.one_nav{
+  width: 25%;
+  height: 82%;
+  position: relative
+}
+.imgbox{
+  width: 76rpx;
+  height: 58rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto
+}
+.imgbox image{
+  width: 100%;
+  height: 100%;
+}
+.one_nav > text{
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 24rpx;
+  color: #292929
+}
+.list_message{
+  width: 676rpx;
+  height: 90rpx;
+  border-bottom: 1px solid #dddddd;
+  margin:  0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.list_message view:nth-child(1){
+  margin-left: 28rpx;
+  line-height: 90rpx;
+  color: #333333;
+  font-size: 25rpx;
+}
+.dir_right{
+  width: 13rpx;
+  height: 21rpx;
+  margin-right: 36rpx;
+  margin-top: 38rpx
+}
+.show{
+  display: block
+}
+.out{
+  display: none
+}
+.mengban{
+  width: 750rpx;
+  height: calc(100vh - 0rpx);
+  background: rgba(0,0,0,0.8);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000
+}
+.btn_box{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 680rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #4ACD8E;
+  color: #fff
+}

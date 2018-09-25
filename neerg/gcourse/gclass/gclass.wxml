@@ -1,0 +1,20 @@
+<image class="ban_img" src="https://store.ineerg.com/static/mini/images/order/pic_2.jpg"></image>
+<view class="ban_title">G小姐们很贴心，首先给我检测了皮肤，然后分析我的皮肤状况，为我制定了一个深层毛囊清洁的项目，然后就由管理师为我操作了，全程体验下来感觉超棒，管理师会先帮你按压头部，还有肩颈，感觉特别的放松。</view>
+<!--内容部分-->
+<view class="list_box">
+	<view class="title">俱乐部活动</view>
+	<view class="titleDesc">寻觅夏日白瓷肌</view>
+
+	<block wx:for="{{datalist}}" wx:for-index="index" wx:key="key">
+		<navigator class="contentImg" hover-class="none" url=''>
+			<image src="https://store.ineerg.com{{item.ImgURL}}"></image>
+			<view class="img_desc">{{item.Title}}</view>
+			<navigator url='/gcourse/gclassContent/gclassContent?id={{item.Id}}' class="img_check">查看详情</navigator>
+		</navigator>
+	</block>
+	<!-- <navigator class="contentImg" hover-class="hover">
+		<image src="/images/pic_3.jpg"></image>
+		<view class="img_desc">换个角度看世界，不要错过</view>
+		<view class="img_check">查看详情</view>
+	</navigator> -->
+</view>

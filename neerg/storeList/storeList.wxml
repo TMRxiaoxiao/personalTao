@@ -1,0 +1,18 @@
+<!--storeList/storeList.wxml-->
+<view style='width:750rpx;overflow:hidden' wx:for="{{Storelist}}" wx:key="" bindtap='xuanzhe' data-id="{{index}}">
+  <block>
+    <view class='storeList'>
+      <view class='img_box'>
+        <image mode='widthFix' src='https://store.ineerg.com{{item.logo}}'></image>
+      </view>
+      <view class='content_box'>
+        <view class='first'>
+          <text>{{item.fullname}}</text>
+          <image src='/images/adress.png'></image>
+          <text>{{item.distance}}km</text>
+        </view>
+        <view class='adress'>{{item.address}}</view>
+      </view>
+    </view>
+  </block>
+</view>

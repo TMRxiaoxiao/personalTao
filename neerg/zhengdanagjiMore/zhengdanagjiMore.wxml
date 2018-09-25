@@ -1,0 +1,38 @@
+<!--zhengdanagjiMore/zhengdanagjiMore.wxml-->
+<!--gcourse/couse_content/couse_content.wxml-->
+<view class='banner_box'>
+  <image src='https://store.ineerg.com/static/mini/images/course/img1.png'></image>
+</view>
+<view class='title_desc'>
+  <view class='img_desc'>护肤 | 学了这些抖音上的美妆小技巧，我成了朝阳区最有排面的人!</view>
+</view>
+<view class='content_box'>
+  <text>
+    前几天跟大家讨论过夏日如何不闷痘的时候我闷了一个?????！然后我今天在异国他乡的早上起来，发现了我长了闭口??!
+
+    有在Follow我小红书的朋友们一定知道我一直都会强调卸妆清洁的重要性，而且每天都认真卸妆，每周会固定做一 次深层清洁，如果皮肤     状态不好的话还会增加一次。即使这样，哈哈哈哈，我也是会有闭口的困扰。有人曾经说过，只要 是人就会黑头和闭口的困扰，这句话说的好中肯。我有了好多闭口，说明我是个好人.哈哈哈哈（不好笑??）在此说一下， 我平时会认真看大家的评论，也希望可以推荐我试过养生方法和自己用过的产品与大家交流，当然大家还是要根据自己 的具体状况去做选择喔！不是说安琪拉说的都是??对的，我只是在小红书这个平台跟大家分享我的一些心得。
+  </text>
+  <view class='photo_img'>
+    <image src='https://store.ineerg.com/static/mini/images/course/img2.jpg'></image>
+  </view>
+  <view class='keyWord'>
+    <text>#G小姐</text>
+    <text>#护肤品</text>
+    <text>#保湿</text>
+    <text>#换季</text>
+  </view>
+  <view class='time'>
+    <view class='time_left'>
+      <text>2018-04-24</text>
+      <text style='margin-left:20rpx'>21:22</text>
+    </view>
+    <view class='zan_count'>
+      <view class='zan'>
+        <image src='https://store.ineerg.com/static/mini/images/course/xin.png'></image>
+      </view>
+      <text>545454次赞</text>
+    </view>
+  </view>
+</view>
+
+

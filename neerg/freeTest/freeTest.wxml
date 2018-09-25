@@ -1,0 +1,37 @@
+<!--freeTest/freeTest.wxml-->
+<view class='test_ban'>
+  <image src='https://store.ineerg.com/static/mini/images/test.png'></image>
+  <view class='cover'>
+    <image src='https://store.ineerg.com/static/mini/images/testLogo.png'></image>
+    <text>免费肌肤检测</text>
+  </view>
+</view>
+<form bindsubmit='tijiao' report-submit='{{true}}'>
+  <view class='form'>
+  <view class='test_box'>全方位皮肤检测，提前五年预知肌肤问题</view>
+  <view class='name'>
+    <picker bindchange="bindPickerChange" value="{{item.fullname}}" range="{{array}}">
+    <text style='line-height:68rpx;margin-left:38rpx;'>当前选择：{{array[index]}}</text>
+  </picker>
+  </view>
+  <view class='name'>
+    <text>姓名*</text>
+    <input class='input1' bindinput='name'></input>
+  </view>
+  <view class='name'>
+    <text>年龄*</text>
+    <input type='number' bindinput='age' class='input1'></input>
+  </view>
+  <view class='name'>
+    <text>手机*</text>
+    <input type='number' bindinput='phone' class='input1'></input>
+  </view>
+  <view class='name1'>
+    <text>留言*</text>
+    <textarea class='input2' bindinput='msg'></textarea>
+  </view>
+  <button form-type='submit' class='submit_button'>提交</button>
+</view>
+</form>
+
+

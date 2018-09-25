@@ -1,0 +1,58 @@
+<!--pages/mall/mall.wxml-->
+<view class="content">
+  <view class="left">
+    <block wx:for="{{flag? xilieList:note}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+    </block>
+  </view>
+  <view class="right">
+    <block wx:for="{{flag? xilieList:note}}" wx:key="">
+      <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+    </block>
+  </view>
+</view>
+<view class="{{back == false ? 'aa':'show_nav'}}">
+  <view bindtap='back' class='xiala_box'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/allPro/zhankai.png'></image>
+  </view>
+  <view bindtap='back' class='list_every colors all_p' style='margin-top:20rpx'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/allPro/icon1.png'></image>
+    <text class='color1'>全部项目</text>
+  </view>
+</view>
+<view class="nav_box{{back == true ? ' back':''}}">
+  <view bindtap='back' class='xiala_box'>
+    <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/allPro/xiala.png'></image>
+  </view>
+  <view class='list_xilie'>
+    <view bindtap='allSelect' class="list_every {{ee==0?' colors':''}}" data-i='0'>
+      <!-- <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/allPro/icon1.png'></image> -->
+      <text class='color1'>全部项目</text>
+    </view>
+    <view wx:for="{{Column}}" wx:key="columnkey" wx:for-item="columnitem" class="list_every {{columnitem.catid==e?'colors':''}}">
+      <text bindtap='xzType' class="color1" data-i='{{columnitem.catid}}'>{{columnitem.name}}</text>
+    </view>
+  </view>
+</view>
+<view class='addbox'></view>
+<view class="backTop {{floorstatus==true?'shows':''}}" bindtap='goTop' >
+  <image src='/images/top.png'></image>
+  <text>顶部</text>
+</view>
+<!--  下面是一个模块 -->
+<template name="item">
+  <navigator url='/saleListContent/saleListContent?id={{id}}&shopid=0&promotype={{promotype}}' class="item">
+    <image class="item-img" src="https://store.ineerg.com/{{thumb}}" mode="widthFix"></image>
+    <view class='desc'>
+      <view class='one1'>{{name}}</view>
+      <view class='one2' wx:if="{{promotype!=''}}">优惠活动 | {{promotype}}</view>
+      <view class='one3'>
+        <text>￥{{price}}</text>
+        <text>{{scount}}参与</text>
+        <view class='right1'>
+          <image src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>

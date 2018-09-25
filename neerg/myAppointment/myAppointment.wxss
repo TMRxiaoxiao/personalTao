@@ -1,0 +1,85 @@
+/* myAppointment/myAppointment.wxss */
+.every_appoin{
+  width: 750rpx;
+  background: #fff
+}
+.first{
+  width: calc( 100vw - 54rpx);
+  height: 85rpx;
+  margin: 0 auto;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: space-between
+}
+.date_box{
+  height: 46rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 46rpx
+}
+.del{
+  width: 118rpx;
+  height: 38rpx;
+  margin-top: 24rpx;
+  line-height: 38rpx;
+  display: flex;
+  justify-content: space-between
+}
+.date_box image{
+  width: 40rpx;
+  height: 44rpx;
+  vertical-align: middle
+}
+.date_box text{
+  font-size: 20rpx;
+  color: #369857;
+  margin-left: 8rpx
+}
+.del image{
+  width: 36rpx;
+  height: auto;
+  vertical-align: middle
+}
+.del text{
+  display: block;
+  color: #1b1b1b;
+  font-size: 22rpx;
+}
+.store_box{
+  width: calc( 100vw - 54rpx);
+  height: auto;
+  padding: 25rpx 0 30rpx 0;
+  font-size: 26rpx;
+  color: #5c5c5c;
+  margin: 0 auto;
+  line-height: 60rpx
+}
+.store_box text{
+  display: block
+}
+page{
+  background: #F3F3F3
+}
+.every_appoin{
+  margin-top: 10rpx;
+}
+.every_appoin:nth-child(1){
+  margin-top: 0
+}
+.zanwushuju{
+  width: 400rpx;
+  height: 580rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0rpx;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+  opacity: 0.7
+}
+.zanwushuju image{
+  width: 100%;
+  height: 100%
+}

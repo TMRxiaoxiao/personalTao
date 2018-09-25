@@ -1,0 +1,45 @@
+<!--secondKill/secondKill.wxml-->
+
+<view class='banner'>
+    <image mode='widthFix' src='https://store.ineerg.com{{killData.thumb}}'></image>
+    <view class='backCover'>
+        <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/backCover.png'></image>
+        <view class="priceBox">
+            <text>￥</text>
+            <text>{{killData.disprice}}</text>
+            <text>即刻秒杀</text>
+        </view>
+        <view class="timeOver">
+            <view>距结束仅剩</view>
+            <view>
+              {{content}}
+            </view>
+        </view>
+    </view>
+</view>
+<view style="width: 694rpx;margin: 0 auto;overflow: hidden">
+    <view class="intro">
+        <text>{{killData.title}}</text>
+        <view><text>门市价:</text><text>￥{{killData.orprice}}</text></view>
+        <text>
+            {{killData.subtitle}}
+        </text>
+    </view>
+</view>
+<view class="shiyongMall">
+    <image mode='widthFix' src="https://store.ineerg.com/static/mini/images/dingwei.png"></image>
+    <block wx:for="{{killData.joinshop}}" wx:key wx:for-item="v">
+      <text>适用门店：{{v.shortname}}</text>
+    </block>
+</view>
+<view class="huodongIntro">
+    <text>活动说明</text>
+    <text>
+        有效时间：{{timeOver}} <br/>
+        {{killData.intro}}
+    </text>
+</view>
+<view class="richText">
+    <rich-text nodes="{{richtext}}"></rich-text>
+</view>
+<view class="buyBtn" bindtap='buy'>立即购买</view>

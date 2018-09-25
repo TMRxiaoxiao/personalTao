@@ -1,0 +1,169 @@
+<!-- 头部导航 -->
+<view class="nav">
+  <view class="{{selected?'default_hover':'default'}}" bindtap="selected">全部</view>
+  <view class="{{selected1?'default_hover':'default'}}" bindtap="selected1">待成团</view>
+  <view class="{{selected2?'default_hover':'default'}}" bindtap="selected2">待使用</view>
+  <view class="{{selected3?'default_hover':'default'}}" bindtap="selected3">待评价</view>
+  <!--<view class="{{selected4?'default_hover':'default'}}" bindtap="selected4">退款/售后</view>-->
+</view>
+<view class="hr"></view>
+<!-- 全部 -->
+<view class="{{selected?'show':'hidden'}}">
+  <view wx:if="{{quanbu==''}}">
+    <view class='zanwushuju'>
+      <image src='/images/tishi.png'></image>
+    </view>
+  </view>
+  <block wx:for="{{quanbu}}" wx:for-index="index" wx:key="key">
+    <view class="list">
+      <view class="time_state">
+        <text class="time">{{item.paytime}}</text>
+        <!--<text class="state">{{item.state}}</text>-->
+      </view>
+      <view class="details">
+        <image src="https://store.ineerg.com{{item.service_memo.thumb}}"></image>
+        <view class="right">
+          <text class="title">{{item.service_memo.name}}</text>
+          <text class="price">￥{{item.service_memo.price}}</text>
+          <text class="number">X{{item.count}}</text>
+        </view>
+      </view>
+      <view wx:if="{{item.action=='use'}}" class="real_payment">
+        耗卡：<text style='color:#ff2d2d'>1</text>  次
+      </view>
+      <view wx:else class="real_payment">共{{item.count}}件 实付款：
+        <text>￥{{item.rfee}}</text>
+      </view>
+       <!-- <view class="btn">
+				  <view class="delete">删除订单</view>  
+				<navigator url='/storeReview/storeReview?id={{item.iid}}' class="evaluation">点击评价</navigator>
+			</view>  -->
+    </view>
+  </block>
+</view>
+<!-- 待成团 -->
+<view class="{{selected1?'show':'hidden'}}">
+  <view wx:if="{{orderList1==''}}">
+    <view class='zanwushuju'>
+      <image src='/images/tishi.png'></image>
+    </view>
+  </view>
+  <block wx:for="{{orderList1}}" wx:for-index="index" wx:key="key">
+    <view class="list">
+      <view class="time_state">
+        <text class="time">{{item.paytime}}</text>
+        <text class="state">待成团</text>
+      </view>
+      <view class="details">
+        <image src="https://store.ineerg.com{{item.service_memo.thumb}}"></image>
+        <view class="right">
+          <text class="title">{{item.service_memo.name}}</text>
+          <text class="price">￥{{item.service_memo.price}}</text>
+          <text class="number">X{{item.count}}</text>
+        </view>
+      </view>
+      <view class="real_payment">共一件 实付款：
+        <text>￥{{(item.rfee)}}</text>
+      </view>
+      <view class="btn">
+        <view style='display:none' class="delete"></view>
+        <!-- <navigator url='' class="evaluation"></navigator> -->
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 待使用 -->
+<view class="{{selected2?'show':'hidden'}}">
+  <view wx:if="{{orderList2==''}}">
+    <view class='zanwushuju'>
+      <image src='/images/tishi.png'></image>
+    </view>
+  </view>
+  <block wx:for="{{orderList2}}" wx:for-index="index" wx:key="key">
+    <view class="list">
+      <view class="time_state">
+        <text class="time">{{item.paytime}}</text>
+        <text class="state">待使用</text>
+      </view>
+      <view class="details">
+        <image src="https://store.ineerg.com{{item.service_memo.thumb}}"></image>
+        <view class="right">
+          <text class="title">{{item.service_memo.name}}</text>
+          <text class="price">￥{{(item.rfee)}}</text>
+          <text class="number">X{{item.count}}</text>
+        </view>
+      </view>
+      <view class="real_payment">共一件 实付款：
+        <text>￥{{(item.rfee)}}</text>
+      </view>
+      <view class="btn">
+        <view style='display:none' class="delete"></view>
+        <navigator url='/couponMa/couponMa?name={{item.service_memo.name}}' class="evaluation">点击使用</navigator>
+      </view>
+    </view>
+  </block>
+
+</view>
+<!-- 待评价 -->
+<view class="{{selected3?'show':'hidden'}}">
+  <view wx:if="{{orderList3==''}}">
+    <view class='zanwushuju'>
+      <image src='/images/tishi.png'></image>
+    </view>
+  </view>
+  <view>
+    <block wx:for="{{orderList3}}" wx:for-index="index" wx:key="key">
+      <view class="list">
+        <view class="time_state">
+          <text class="time">{{item.time}}</text>
+          <text class="state">待评价</text>
+        </view>
+        <view class="details">
+          <image src="https://store.ineerg.com{{item.service_memo.thumb}}"></image>
+          <view class="right">
+            <text class="title">{{item.service_memo.name}}</text>
+            <text class="price">￥{{item.service_memo.price}}</text>
+            <text class="number">X{{item.count}}</text>
+          </view>
+        </view>
+        <view class="real_payment">共一件 实付款：
+          <text>￥{{item.service_memo.price}}</text>
+        </view>
+        <view class="btn">
+          <view style='display:none' class="delete"></view>
+          <navigator url='/storeReview/storeReview?id={{item.iid}}&&orderid={{item.orderid}}&&name={{item.service_memo.name}}&&shopName={{item.shopname}}' class="evaluation">点击评价</navigator>
+        </view>
+
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 退款 -->
+<view class="{{selected4?'show':'hidden'}}">
+  <view wx:if="{{orderList==''}}">
+    <view style='text-align:center;color:#d7d7d7;font-size:36rpx'>暂无数据</view>
+  </view>
+  <block wx:for="{{orderList}}" wx:for-index="index" wx:key="key">
+    <view class="list">
+      <view class="time_state">
+        <text class="time">{{item.paytime}}</text>
+        <text class="state">待使用</text>
+      </view>
+      <view class="details">
+        <image src="https://store.ineerg.com{{item.service_memo.thumb}}"></image>
+        <view class="right">
+          <text class="title">{{item.service_memo.name}}</text>
+          <text class="price">￥{{(item.rfee/100)}}</text>
+          <text class="number">X{{item.count}}</text>
+        </view>
+      </view>
+      <view class="real_payment">共一件 实付款：
+        <text>￥{{(item.rfee/100)}}</text>
+      </view>
+      <view class="btn">
+        <view style='display:none' class="delete"></view>
+        <navigator url='/couponMa/couponMa?id={{item.iid}}&name={{item.service_memo.name}}' class="evaluation">点击使用</navigator>
+      </view>
+    </view>
+  </block>
+</view>

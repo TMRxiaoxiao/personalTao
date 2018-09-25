@@ -1,0 +1,26 @@
+<!--couponMa/couponMa.wxml-->
+<view class='quanBan'>
+  <image src='https://store.ineerg.com/static/mini/images/order/quan.png'>
+    <text>项目抵用券</text>
+    <text>{{name}}</text>
+    <!--<text>2018/04/13 - 2018/12/31</text>-->
+  </image>
+  <view class='neergLogo'><image src='https://store.ineerg.com/static/mini/images/order/logo.png'></image></view>
+</view>
+<view class='ma1'>
+  <view class='maImg'>
+    <image src='{{url}}'></image>
+  </view>
+</view>
+<view class='rules'>
+  <text>
+    规则：
+    1、到店使用请出示条码并与店员确认
+    2、抵用码仅限本人使用
+    3、购买单个项目使用后失效，年卡支持多次使用
+    4、请提前一天预约项目
+  </text>
+</view>
+
+
+

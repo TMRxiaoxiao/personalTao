@@ -1,0 +1,29 @@
+<!--gcourse/gclassContent/gclassContent.wxml-->
+<!--gcourse/couse_content/couse_content.wxml-->
+<!-- <import src="../../wxParse/wxParse.wxml" /> -->
+<view class='title_desc'>
+  <view class='img_desc'>{{datacontent.Title}}</view>
+</view>
+<view class='content_box'>
+<rich-text  nodes="{{xml}}"></rich-text>
+  <view class='keyWord'>
+    <text>#G小姐</text>
+    <text>#护肤品</text>
+    <text>#保湿</text>
+    <text>#换季</text>
+  </view>
+  <view class='time'>
+    <view class='time_left'>
+      <text>2018-04-24</text>
+      <text style='margin-left:20rpx'>21:22</text>
+    </view>
+    <view class='zan_count'>
+      <!--<view class='zan'>
+        <image src='https://store.ineerg.com/static/mini/images/course/xin.png'></image>
+      </view>
+      <!--<text>545454次赞</text>-->
+    </view>
+  </view>
+</view>
+
+

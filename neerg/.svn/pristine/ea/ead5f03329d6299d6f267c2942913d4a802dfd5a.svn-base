@@ -1,0 +1,105 @@
+<!--pages/store/store.wxml-->
+<view class='search'>
+  <view class='icon_box'>
+    <image src='https://store.ineerg.com/static/mini/images/sousuo.png'></image>
+  </view>
+  <input class='input' bindinput='sousuo' placeholder='搜索门店' placeholder-style="color:#bbbbbb;font-size:30rpx"></input>
+</view>
+<!-- 地区选择 -->
+<view class="section">
+  <view class="picker">
+    <view class='everyOne' catchtap="translate">
+      {{pro!==""&&flag==true?pro:"请选择"}}
+      <view class='xiala'>
+        <image src='https://store.ineerg.com/static/mini/images/xiangxia.png'></image>
+      </view>
+    </view>
+    <view class='everyOne' catchtap='translate'>
+      {{cit!==""&&flag==true?cit:"请选择"}}
+      <view class='xiala'>
+        <image src='https://store.ineerg.com/static/mini/images/xiangxia.png'></image>
+      </view>
+    </view>
+    <view class='everyOne' catchtap='translate'>
+      {{are!==""&&flag==true?are:"请选择"}}
+      <view class='xiala'>
+        <image src='https://store.ineerg.com/static/mini/images/xiangxia.png'></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+<!-- adress列表 -->
+<!--常去-->
+<view class='zanwushuju' wx:if="{{StoreList==''}}"></view>
+<navigator wx:if="{{StoreList!==''}}" wx:for="{{StoreList}}" wx:key="" wx:for-item="storitems" hover-class='none' url="/storeDetail/storeDetail?shopid={{storitems.shopid}}&offen=0&typeH={{storitems.promo==null? 0:1}}" class='adress_list' wx:if="{{storitems.offen=='yes'}}">
+  <text>{{storitems.fullname}}</text>
+  <text style='color:#373737'>{{storitems.address}}</text>
+  <view class='third'>
+    <block wx:if="{{storitems.promo!==null}}" wx:for="{{storitems.promo.types}}" wx:key="">
+      <text class='markhuodong' wx:if="{{item=='团'}}" style="background:#f36541">{{item}}</text>
+      <text class='markhuodong' wx:if="{{item=='特'}}" style="background:#fec463">{{item}}</text>
+      <text class='markhuodong' wx:if="{{item=='秒'}}" style="background:#a2d063">{{item}}</text>
+    </block>
+    <view style='color:#808080;font-size:26rpx' wx:if="{{storitems.promo==null}}">暂无活动</view>
+    <text class='huodong'>{{storitems.promo.title}}</text>
+  </view>
+  <view class='yuli'>
+    <view class='changqu'>
+      <image src='https://store.ineerg.com/static/mini/images/wujiaoxing.png'></image>
+      <text>常去</text>
+    </view>
+    <view class='ad'>距{{storitems.distance}}km</view>
+  </view>
+</navigator>
+
+<!--基本列表-->
+<view class='zanwushuju' wx:if="{{StoreList==''}}">
+  <image src='/images/tishi.png'></image>
+</view>
+<navigator hover-class='none' wx:for="{{StoreList}}" wx:key="StoreKey" wx:for-item="storeitem" url="/storeDetail/storeDetail?shopid={{storeitem.shopid}}&offen=1&typeH={{storeitem.promo==null? 0:1}}" class='adress_list' wx:if="{{storeitem.offen!=='yes'}}">
+  <text>{{storeitem.fullname}}</text>
+  <text>{{storeitem.address}}</text>
+  <view class='third'>
+    <block wx:if="{{storeitem.promo!==null}}" wx:for="{{storeitem.promo.types}}" wx:key="">
+      <text class='markhuodong' wx:if="{{item=='团'}}" style="background:#f36541">{{item}}</text>
+      <text class='markhuodong' wx:if="{{item=='特'}}" style="background:#fec463">{{item}}</text>
+      <text class='markhuodong' wx:if="{{item=='秒'}}" style="background:#a2d063">{{item}}</text>
+    </block>
+    <view style='color:#808080;font-size:26rpx' wx:if="{{storeitem.promo==null}}">暂无活动</view>
+    <text class='huodong'>{{storeitem.promo.title}}</text>
+  </view>
+  <view class='yuli'>
+    <view class='you'>
+      <image src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </view>
+    <view class='ad'>距{{storeitem.distance}}km</view>
+  </view>
+</navigator>
+
+
+
+<!--地区选择-->
+
+<view class="animation-element-wrapper" data-id="444" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}">
+  <view class="animation-element" catchtap="nono">
+    <text class="left-bt plp_text" catchtap="hiddenFloatView" data-id="555">取消</text>
+    <text class="right-bt plp_text" catchtap="hiddenFloatView" data-id="666">确定</text>
+    <view class="line"></view>
+
+    <picker-view indicator-style="height:50rpx;" value="{{value}}" bindchange="bindChange" catchtap="nono">
+      <!--省-->
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="" id='{{item.pid}}'>{{item.province}}</view>
+      </picker-view-column>
+      <!--地级市-->
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="" id='{{item.cid}}'>{{item.city}}</view>
+      </picker-view-column>
+      <!--区县-->
+      <picker-view-column>
+        <view wx:for="{{areas}}" wx:key="" id='{{item.xid}}'>{{item.area}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

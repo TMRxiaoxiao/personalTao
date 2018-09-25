@@ -1,0 +1,102 @@
+<!--firendKj/firendKj.wxml-->
+<view class="pro">
+    <view class="first">
+        <view class="bodyPhoto">
+            <image src="{{proIntro.start.info.avatar}}"></image>
+            <text>{{proIntro.start.info.name}}</text>
+        </view>
+        <view class="num">
+            <image src="https://store.ineerg.com/static/mini/images/hot22.png"></image>
+            <text>{{proIntro.joincount}}人参与砍价</text>
+        </view>
+    </view>
+    <view class="second">
+        <image src="https://store.ineerg.com{{proIntro.thumb}}"></image>
+        <view class="rightR">
+            <text>{{proIntro.title}}</text>
+            <text>{{proIntro.subtitle}}</text>
+            <view>
+                <text>美肤价格：</text>
+                <text>￥{{proIntro.orprice}}</text>
+            </view> 
+        </view>
+    </view>
+</view>
+<view class='maina'>
+  <progress percent="{{bfh}}" stroke-width="14" activeColor="#ec5f4d" backgroundColor="#eaeaea" active></progress>
+  <view class="price">
+        <text>已砍价{{cutPrice}}元</text>
+        <text>还剩{{proIntro.start.remain}}元</text>
+    </view>
+    <button wx:if="{{flag==false}}" bindtap='Kprice' class="fenxiangBtn">帮好友砍一刀</button>
+    <button wx:if="{{canIUse && flag}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="fenxiangBtn">帮好友砍一刀</button>
+    <button wx:if="{{flag==false}}" class="fenxiangBtn" open-type='share'>我也要参加</button>
+    <button wx:if="{{flag}}" class="fenxiangBtn" bindtap='joinKj'>我也要参加</button>
+    <view class='timeover'>距砍价结束   {{content}}</view>
+</view>
+<view class="shiyongMall" style='margin-top: 80rpx;'>
+    <image mode='widthFix' src="https://store.ineerg.com/static/mini/images/dingwei.png"></image>
+    <text>适用门店：</text>
+    <block wx:for="{{proIntro.joinshop}}" wx:key>
+      <text>{{item.shortname}}</text>
+    </block>
+</view>
+<view class="sellHd">
+    <view class="huodongIntro">
+        <text>砍价说明</text>
+        <text> 
+          {{proIntro.intro}}
+        </text>
+    </view>
+</view>
+<!--砍价英雄榜-->
+<view class="sellHero">
+    <view class="kanjiaNav">
+        <view data-current="0" bindtap='click1' class="one{{currentTB==0?' active11':''}}">亲友团砍价</view>
+        <view data-current="1" bindtap='click1' class="one{{currentTB==1?' active11':''}}">砍价英雄榜</view>
+    </view>
+    <view class="listKj">
+        <block wx:for="{{proIntro.start.logs}}" wx:key>
+            <view class="oneBox">
+            <image mode="widthFix" src="{{item.memberInfo.avatar}}"></image>
+            <view>
+                <text>{{item.memberInfo.name}}</text>
+                <text>分享好友领取优惠券</text>
+            </view>
+            <image mode="widthFix" src="https://store.ineerg.com/static/mini/images/kanIcon.png"></image>
+            <text>砍掉</text>
+            <text>￥{{item.fee}}</text>
+        </view>
+        </block>
+    </view>
+</view>
+<!-- 弹出提示 -->
+<view class='alertMessage' wx:if="{{flas}}">
+    <view class='duiBox'>
+        <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (8).png'></image>
+    </view>
+    <view class='kPrice'>
+        <text>您成功帮好友砍价</text><text>{{cutedPrice}}</text><text>元！</text>
+    </view>
+    <view class='quanList'>
+        <text>恭喜您！获得neerG红包优惠券，点击领取！</text>
+        <block wx:for="{{quanList}}" wx:key>
+            <view class='listOne'>
+                <view class='prices'><text>￥</text>{{item.fee}}</view>
+                <view class='priceInfo'><text>{{item.name}}</text><text>{{item.exp}}</text></view>
+            </view>
+        </block>
+        <view class='getBox' bindtap="getQuan" wx:if="{{glag}}">
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (2).png'></image>
+            <text>领取优惠券</text>
+        </view>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='getBox' wx:if="{{glag==false}}">
+            <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (2).png'></image>
+            <text>领取优惠券</text>
+        </button>
+    </view>
+    <view class='del' bindtap='del'>
+        <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/po (4).png'></image>
+    </view>
+</view>   
+

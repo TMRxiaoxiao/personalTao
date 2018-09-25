@@ -1,0 +1,58 @@
+<!--personInfor/personInfor.wxml-->
+<view class='top_mess'>
+  <image src='https://store.ineerg.com/static/mini/images/my/my1.png'></image>
+  <view class='main_box'>
+    <image class='body_p' src='{{userinfo.avatar}}'></image>
+    <image class='vip' src='https://store.ineerg.com/static/mini/images/my/vip.png'></image>
+    <view class='base_mess'>
+      <view class='first'>
+        <text></text>
+        <!-- <view class='nk_card'>
+          <image src='https://store.ineerg.com/static/mini/images/my/cardBac.png'></image>
+          <view class='text_box'>高级年卡</view>
+        </view> -->
+        <view style='clear:both'></view>
+      </view>
+      <view class='second'>
+        <view>性别:</view> 
+        <view wx:if="{{user.gender=='男'}}">
+          <image style='width:20rpx;height:30rpx;margin-top:-3rpx'           src='https://store.ineerg.com/static/mini/images/sex.png'></image>
+        </view>
+        <view wx:if="{{user.gender=='女'}}">
+          <image style='width:20rpx;height:30rpx;margin-top:-3rpx'           src='https://store.ineerg.com/static/mini/images/my/sex.png'></image>
+        </view>
+        <view>积分:</view>
+        <view>
+          <image src='https://store.ineerg.com/static/mini/images/my/gold.png'></image>
+        </view>
+        
+        <view>{{userinfo.score}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='content'>
+  <view class='list_one'>
+    <text>姓名</text>
+    <input type='text' value='{{name}}' bindinput='username' style="margin-top: 45rpx;font-size: 32rpx;color: #bfbfbf;text-align:right;padding-right:32rpx;width:104%;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;"></input>
+  </view>
+  <view class="list_one">
+    <text>性别</text>
+    <picker class='pick1' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <text style='color:#bfbfbf'>{{array[index]}}</text>
+    </picker>
+  </view>
+  <view class='list_one'>
+    <text>出生日期</text>
+    <picker class='pick1' mode="date" value="{{date}}" start="1900-09-01" end="2018-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        <text style='color:#bfbfbf'>{{date}}</text>
+      </view>
+    </picker>
+  </view>
+  <navigator hover-class='none' url='/setMessage/setMessage' class='list_one'>
+    <text>电话号码</text>
+    <text>{{userinfo.cardno}}</text>
+  </navigator>
+  <view class='sub' bindtap='baochun'>保存</view>
+</view>

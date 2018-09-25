@@ -1,0 +1,22 @@
+<!--cardZhuanqu/cardZhuanqu.wxml-->
+<!-- 卡片图片没有切图 -->
+<view class='content'>
+  <!-- <view class='title' wx:if="{{SecondCard!=null&&SecondCard!=''}}">次卡</view> -->
+  <block wx:for="{{SecondCard}}" wx:key="" wx:for-item="dataitem" wx:if="{{dataitem.type==1}}">
+    <view class='cardName'>{{dataitem.name}}</view>
+    <text decode="emsp" class='cardDesc'>{{dataitem.description}}</text>
+    <view class='cardPrice'>{{dataitem.price}}元/{{dataitem.count}}次</view>
+    <navigator class='list_one' url="/cardDetail1/cardDetail1?id={{dataitem.id}}&price={{dataitem.price}}&count={{dataitem.count}}">
+      <image src='https://store.ineerg.com{{dataitem.thumb}}'></image>
+    </navigator>
+  </block>
+  <!-- <view class='title' wx:if="{{YearCard!=null&&YearCard!=''}}">年卡</view> -->
+  <block wx:for="{{YearCard}}" wx:key="" wx:for-item="listitem" wx:if="{{listitem.type==0}}">
+    <view class='cardName'>{{listitem.name}}</view>
+    <text decode="emsp" class='cardDesc'>{{listitem.description}}</text>
+    <view class='cardPrice'>{{listitem.price}}元/{{listitem.count}}</view>
+    <navigator class='list_one' url="/cardDetail1/cardDetail1?id={{listitem.id}}&price={{listitem.price}}&count={{listitem.count}}&mark='1'">
+    <image src='https://store.ineerg.com{{listitem.thumb}}'></image>
+  </navigator>
+  </block>
+</view>

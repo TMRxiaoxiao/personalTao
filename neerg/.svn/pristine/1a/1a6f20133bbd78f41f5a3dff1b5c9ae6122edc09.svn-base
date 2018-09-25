@@ -1,0 +1,76 @@
+.radio{
+  padding-top: 42rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  border: 1xp solid #fff;
+}
+.aa{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.price{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+text{
+  color: #000;
+  font-size: 26rpx;
+}
+.content{
+  width: calc( 100vw - 54rpx);
+  margin: 0 auto;
+}
+.price{
+  color: #f33444;
+  font-size: 20rpx;
+  display: flex
+}
+.title{
+  width:750rpx;
+  height: 110rpx;
+  border-bottom: 1px solid #ececec;
+}
+.title text{
+  display: block;
+  float: left;
+  width: 50%;
+  height: 100%;
+  color: #000;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 110rpx
+}
+.title text:nth-child(2){
+  border-right: 1px solid #dddddd;
+  box-sizing: border-box;
+  color: #46cc8c
+}
+.button{
+  width: 626rpx;
+  height: 68rpx;
+  background: #46cd8b;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 68rpx;
+  margin: 0 auto;
+  border-radius: 40rpx
+}
+.btnNext{
+  width: 750rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+}
+.addBox{
+  width: 750rpx;
+  height: 150rpx;
+}

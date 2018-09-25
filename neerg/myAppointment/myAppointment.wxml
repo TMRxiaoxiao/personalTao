@@ -1,0 +1,24 @@
+<!--myAppointment/myAppointment.wxml-->
+<view wx:if="{{datalist==''}}">
+    <view class='zanwushuju'>
+      <image src='/images/tishi.png'></image>
+    </view>
+  </view>
+<view class='every_appoin' wx:for="{{datalist}}" wx:key="">
+  <view class='first'>
+    <view class='date_box'>
+      <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/my/date.jpg'></image>
+      <text>{{item.date}} {{item.hms}}</text>
+    </view>
+    <view class='del'>
+      <image mode='widthFix' src='https://store.ineerg.com/static/mini/images/my/1.jpg'></image>
+      <text wx:if="{{item.status<2}}" id="{{item.id}}" bindtap='quxiao'>取消</text>
+      <text style='text-align:right' wx:else>已完成</text>
+    </view>
+  </view>
+  <view class='store_box'>
+      <text>预约门店：{{item.shopname}}</text>
+      <text>预约项目：{{item.service}}</text>
+      <text>预约状态：{{item.status_text}}</text>
+    </view>
+</view>

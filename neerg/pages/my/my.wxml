@@ -1,0 +1,111 @@
+<!-- 需要使用 button 来授权登录 -->
+<view class="mengban{{flag == true ? ' show' : ' out'}}">
+  <view class="thost" >
+  <button class='btn_box' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">请先微信授权登录</button>
+<view wx:else>请升级微信版本</view>
+</view>
+</view>
+<view class="">
+  <view class='top_mess'>
+    <image src='https://store.ineerg.com/static/mini/images/my/my1.png'></image>
+    <view class='main_box'>
+      <image style='border-radius:50%' class='body_p' src='{{userinfo.avatar}}'></image>
+      <image class='vip' src='https://store.ineerg.com/static/mini/images/my/vip.png'></image>
+      <view class='base_mess'>
+        <view class='first'> 
+          <text>{{userinfo.name}}</text>
+          <!-- <view class='nk_card'> -->
+            <!-- <image src='https://store.ineerg.com/static/mini/images/my/cardBac.png'></image> -->
+            <!-- <view class='text_box'>高级年卡</view> -->
+          <!-- </view> -->
+          <view style='clear:both'></view>
+        </view>
+        <view class='second'>
+          <view class='p1'>性别:</view>
+          <view class='p2' wx:if="{{userinfo.gender=='男'}}">
+            <image style='width:20rpx;height:30rpx;margin-top:-3rpx'           src='https://store.ineerg.com/static/mini/images/sex.png'></image> 
+          </view>      
+          <view class='p2' wx:elif="{{userinfo.gender=='女'}}">
+            <image src='https://store.ineerg.com/static/mini/images/my/sex.png'></image> 
+          </view>
+          <view class='p3'>积分:</view>
+          <view class='p4'>
+            <image src='https://store.ineerg.com/static/mini/images/my/gold.png'></image>
+          </view>
+          <view>{{userinfo.score}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 会员权益 -->
+  <view class='vip_club'>
+    <text>年卡权益</text>
+    <view>
+      <text>成为年卡会员,享受更多权益。</text>
+    </view>
+    <navigator url='/cardZhuanqu/cardZhuanqu' hover-class='none' class='kthy'>
+      <text>购买年卡</text>
+      <view class='right_box'>
+        <image src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+      </view>
+    </navigator>
+  </view>
+  <!-- 四个选项 -->
+  <view class='four_nav'>
+    <navigator hover-class='none' url='/orders/coupons/coupons' class='one_nav'>
+      <view class='imgbox'>
+        <image src='https://store.ineerg.com/static/mini/images/my/nav (2).jpg'></image>
+      </view>
+      <text>优惠卡券</text>
+    </navigator>
+    <navigator hover-class='none' url='/mycard/mycard' class='one_nav'>
+      <view class='imgbox'>
+        <image src='https://store.ineerg.com/static/mini/images/my/nav (1).jpg'></image>
+      </view>
+      <text>我的卡项</text>
+    </navigator>
+    <navigator hover-class='none' url='/orders/integral/integral' class='one_nav'>
+      <view class='imgbox'>
+        <image src='https://store.ineerg.com/static/mini/images/my/nav (3).jpg'></image>
+      </view>
+      <text>积分明细</text>
+    </navigator>
+    <navigator hover-class='none' url='/orders/medal/medal' class='one_nav'>
+      <view class='imgbox'>
+        <image src='https://store.ineerg.com/static/mini/images/my/nav (4).jpg'></image>
+      </view>
+      <text>勋章点亮</text>
+    </navigator>
+  </view>
+  <!-- 信息列表 -->
+  <view style='margin-top:-30rpx'>
+    <!-- <navigator hover-class='none' class='list_message'>
+      <view>我的签到</view>
+      <image class='dir_right' src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </navigator> -->
+    <navigator url='/archives/archives' hover-class='none' class='list_message'>
+      <view>肌肤档案</view>
+      <image class='dir_right' src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </navigator>
+    <navigator url='/personInfor/personInfor' hover-class='none' class='list_message'>
+      <view>个人信息</view>
+      <image class='dir_right' src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </navigator>
+    <navigator url='/myAppointment/myAppointment' hover-class='none' class='list_message'>
+      <view>我的预约</view>
+      <image class='dir_right' src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </navigator>
+    <navigator hover-class='none' url='/orders/order/order' class='list_message'>
+      <view>我的订单</view>
+      <image class='dir_right' src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </navigator>
+    <!-- <navigator hover-class='none' class='list_message'>
+      <view>积分商城</view>
+      <image class='dir_right' src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </navigator> -->
+    <!-- <navigator hover-class='none' class='list_message'>
+      <view>我的消息</view>
+      <image class='dir_right' src='https://store.ineerg.com/static/mini/images/my/right1.png'></image>
+    </navigator> -->
+  </view>
+</view>

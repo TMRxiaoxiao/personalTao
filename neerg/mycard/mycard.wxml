@@ -1,0 +1,23 @@
+<!--mycard/mycard.wxml-->
+
+<view class='content'>
+  <view wx:if="{{datalist==''}}">
+    <view class='zanwushuju'>
+      <image src='/images/tishi.png'></image>
+    </view>
+  </view>
+  <block wx:for="{{datalist}}" wx:key="">
+    <view class='listE' style='background:#fff;padding-bottom:10rpx'>
+      <view class='cardName'>{{item.card_detail.name}}</view>
+      <text decode="emsp" class='cardDesc'>体 / 验 / 计 / 划 &emsp;  修 复 肌 肤 屏 障</text> 
+      <navigator url="/cardDetail/cardDetail?id={{item.id}}&imgurl={{item.card_detail.thumb}}&ctype={{item.ctype}}" class='list_one'>
+        <image mode='widthFix' src='https://store.ineerg.com{{item.card_detail.thumb}}'></image>
+      </navigator>
+      <view class='carddes'>
+        <text wx:if="{{item.type=='finite'}}">剩余{{item.rcount}}次</text>
+        <text wx:if="{{item.type=='infinite'}}">{{item.rcount}}</text>
+        <text>有效时间：{{item.buydate}}~{{item.expdate}}</text>
+      </view>
+    </view>
+  </block>
+</view>

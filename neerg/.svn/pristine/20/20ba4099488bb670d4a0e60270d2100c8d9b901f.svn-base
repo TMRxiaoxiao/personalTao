@@ -1,0 +1,158 @@
+/* secondKill/secondKill.wxss */
+.banner {
+    width: 750rpx;
+    height: 450rpx;
+    position: relative;
+    overflow: hidden
+}
+
+.banner image {
+    width: 100%;
+    height: auto;
+}
+.backCover {
+    width:730rpx;
+    height:90rpx;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    z-index: 10;
+}
+.backCover > image{
+    width: 100%;
+    height: 100%;
+}
+.priceBox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30rpx;
+    margin: auto;
+    line-height: 90rpx;
+}
+.priceBox > text:nth-child(1){
+    font-size: 24rpx;
+    color: #ffffff;
+}
+.priceBox > text:nth-child(2){
+    font-size: 60rpx;
+    color: #ffffff;
+}
+.priceBox > text:nth-child(3){
+    font-size: 24rpx;
+    color: #ffffff;
+    margin-left: 18rpx;
+}
+.timeOver{
+    position: absolute;
+    right: 89rpx;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.timeOver > view:nth-child(1){
+    font-size: 24rpx;
+    color: #ffffff;
+    margin-top: 13rpx;
+    line-height: 1;
+}
+.timeOver > view:nth-child(2){
+    font-size: 22rpx;
+    color: #fff;
+    margin-top: 18rpx;
+    line-height: 1;
+}
+.timeOver > view:nth-child(2) > text{
+    width: 30rpx;
+    height: 30rpx;
+    background: #ffffff;
+    border-radius: 4rpx;
+    color: #fc8092
+}
+.intro{
+    width: 100%;
+    margin-top: 60rpx;
+}
+.intro > text{
+    display: block;
+}
+.intro > text:nth-child(1){
+    color: #333333;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.intro > view{
+  margin-top: 0rpx
+}
+.intro > view>text:nth-child(1){
+  color: #333333;
+    font-size: 20rpx;
+}
+.intro > view>text:nth-child(2){
+    color: #333333;
+    font-size: 20rpx;
+    text-decoration: line-through
+}
+.intro > text:nth-child(3){
+    color: #666666;
+    font-size: 24rpx;
+    margin-top: -20rpx;
+    line-height: 40rpx;
+}
+.shiyongMall{
+    width:750rpx;
+    height: 109rpx;
+    background: #f8f8f8;
+    margin-top: 66rpx;
+}
+.shiyongMall > image{
+    width: 30rpx;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 28rpx;
+}
+.shiyongMall >text{
+    color: #333333;
+    font-size: 30rpx;
+    line-height: 109rpx;
+    margin-left: 32rpx;
+}
+.huodongIntro{
+    width: 694rpx;
+    margin: 57rpx auto 50rpx;
+}
+.huodongIntro >text:nth-child(1){
+    font-size: 24rpx;
+    color: #333333;
+    display: block;
+}
+.huodongIntro >text:nth-child(2){
+    font-size: 24rpx;
+    color: #666666;
+    display: block;
+    line-height: 40rpx;
+}
+.richText{
+    width: 100%;
+    background: #f8f8f8;
+    padding-top: 26rpx;
+    padding-bottom: 26rpx;
+    margin-bottom: 100rpx;
+    overflow: hidden;
+}
+.richText > image{
+    width: 100%;
+}
+.buyBtn{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 750rpx;
+    height: 100rpx;
+    background: #46cc8c;
+    color: #ffffff;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 36rpx;
+}
+
